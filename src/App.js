@@ -1,15 +1,16 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-// import LandingScreen from "./screens/Landing";
 import {
   HomeStackScreen as Home,
   SearchStackScreen as Search,
   AboutStackScreen as About,
-} from "./stacks/ScreenStacks.js";
+} from "./navigations/Stacks.js";
 // import JobDescriptionScreen from "./screens/JobDescription";
 
+const RootStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -28,10 +29,6 @@ export default function App() {
           },
         }}
       >
-        {/* <Tab.Screen
-          name="Landing"
-          component={LandingScreen}
-        /> */}
         <Tab.Screen
           name="Home"
           component={Home}
@@ -73,10 +70,6 @@ export default function App() {
             ),
           }}
         />
-        {/* <Tab.Screen
-          name="JobDescription"
-          component={JobDescriptionScreen}
-         /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );
