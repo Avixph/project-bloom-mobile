@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function SearchScreen() {
+export default function Search() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Home</Text>

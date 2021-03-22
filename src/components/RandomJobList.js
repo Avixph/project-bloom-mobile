@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import LandingContext from "../context/LandingContext";
+import React from "react";
+// import { useState, useEffect } from "react";
 import { StyleSheet, SafeAreaView, TouchableOpacity, Text } from "react-native";
 
 const styles = StyleSheet.create({
@@ -10,25 +10,21 @@ const styles = StyleSheet.create({
     backgroundColor: "#d9bbf2",
   },
   button: {
-    width: 39,
-    height: 39,
+    width: 100,
+    height: 20,
     backgroundColor: "#aa88c67b",
     alignItems: "center",
     borderRadius: 10,
   },
 });
 
-export default function Landing() {
-  const { landing } = useContext(LandingContext);
+export default function RandomJobList() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>bloom</Text>
-
-      <TouchableOpacity
-        title="Enter"
-        style={styles.button}
-        onPress={() => landing()}
-      />
+      <Text>Remote Jobs available</Text>
+      <TouchableOpacity style={styles.button}>
+        <Text>reload</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
