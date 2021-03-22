@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function JobDescriptionScreen() {
+export default function JobDescription() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Job</Text>
