@@ -3,6 +3,7 @@ import {
   StyleSheet,
   View,
   SafeAreaView,
+  FlatList,
   ScrollView,
   Text,
   Image,
@@ -22,11 +23,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#d9bbf2",
     paddingTop: StatusBar.currentHeight,
   },
-  // separator: {
-  //   marginVertical: 8,
-  //   borderBottomColor: "#737373",
-  //   borderBottomWidth: StyleSheet.hairlineWidth,
-  // },
   scrollView: {
     backgroundColor: "pink",
     marginTop: -25,
@@ -43,7 +39,7 @@ const styles = StyleSheet.create({
 export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <FlatList>
         <View></View>
         <Text>Home View</Text>
         <Image
@@ -52,14 +48,16 @@ export default function Home() {
           style={styles.bannerImage}
         />
         <RandomJobList />
-        <Text>Welcome</Text>
-        <Text>Welcome</Text>
-        <Text>Welcome</Text>
-        <Text>Welcome</Text>
-        <Text>Welcome</Text>
-        <Text>Welcome</Text>
-        <Text>Welcome</Text>
-        <Text>Welcome</Text>
+      </FlatList>
+      <ScrollView style={styles.scrollView}>
+        <View></View>
+
+        <Image
+          source={homeBannerLight}
+          resizeMode="contain"
+          style={styles.bannerImage}
+        />
+        <RandomJobList />
       </ScrollView>
     </SafeAreaView>
   );

@@ -1,7 +1,10 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Text } from "react-native";
-
-const noImage = require("../images/logos/no-image-logo.png");
+// import { useState, useEffect } from "react";
+import {
+  StyleSheet,
+  SafeAreaView,
+  Text,
+} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -12,6 +15,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function JobPost() {
+export default function SearchJobList() {
   return <SafeAreaView style={styles.container}></SafeAreaView>;
 }
