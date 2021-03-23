@@ -7,8 +7,6 @@ import {
   Text,
   TextInput,
 } from "react-native";
-import SearchField from "../components/SearchField";
-import SearchJobList from "../components/SearchJobList";
 
 const styles = StyleSheet.create({
   container: {
@@ -17,6 +15,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
   },
+  // separator: {
+  //   marginVertical: 8,
+  //   borderBottomColor: "#737373",
+  //   borderBottomWidth: StyleSheet.hairlineWidth,
+  // },
   input: {
     height: 40,
     margin: 12,
@@ -24,11 +27,16 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Search() {
+export default function SearchField() {
   return (
     <SafeAreaView style={styles.container}>
-      <SearchField />
-      <SearchJobList />
+      <Text>Home</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="search for jobs"
+        keyboardType="default"
+      />
+      <Button title="Search" />
     </SafeAreaView>
   );
 }

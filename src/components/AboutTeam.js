@@ -12,6 +12,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function JobPost() {
+export default function AboutTeam() {
   return <SafeAreaView style={styles.container}></SafeAreaView>;
 }

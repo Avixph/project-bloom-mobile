@@ -17,17 +17,17 @@ export const LandingStackScreen = () => (
     <LandingStack.Screen
       name="Landing"
       component={LandingScreen}
-      // options={{
-      //   headerTitle: (props) => <Header {...props} />,
-      //   headerStyle: {
-      //     backgroundColor: "#d9bbf2",
-      //     borderBottomColor: "#d9bbf2",
-      //     borderBottomWidth: 1.5,
-      //     height: 100,
-      //     // marginHorizontal: 200,
-      //   },
-      //   headerRight: () => <LightsOut />,
-      // }}
+      options={{
+        headerTitle: (props) => <Header {...props} />,
+        headerStyle: {
+          backgroundColor: "#d9bbf2",
+          borderBottomColor: "#d9bbf2",
+          borderBottomWidth: 1.5,
+          height: 100,
+          // marginHorizontal: 200,
+        },
+        headerRight: () => <LightsOut />,
+      }}
     />
   </LandingStack.Navigator>
 );
