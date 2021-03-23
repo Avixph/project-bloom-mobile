@@ -1,30 +1,23 @@
 import React from "react";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, SafeAreaView, Image } from "react-native";
 
 const bloomLogoLight = require("../images/logos/project-bloom-logo-light.png");
 const bloomLogoDark = require("../images/logos/project-bloom-logo-dark.png");
 
 const styles = StyleSheet.create({
-  header: {
-    width: "100%",
-    height: "100%",
-    flexDirection: "row",
+  container: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 16,
+    backgroundColor: "#d9bbf2",
   },
-  logoContainer: {
-    position: "absolute",
-
-    // left: 16,
-  },
-  logo: { width: "60%", marginBottom: 10 },
+  logo: { width: "80%" },
 });
 
-export default function Header() {
+export default function Loading() {
   return (
-    <View style={styles.header}>
+    <SafeAreaView style={styles.container}>
       <Image source={bloomLogoLight} resizeMode="contain" style={styles.logo} />
-    </View>
+    </SafeAreaView>
   );
 }

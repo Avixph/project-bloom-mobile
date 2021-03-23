@@ -1,6 +1,10 @@
 import React from "react";
 // import { useState, useEffect } from "react";
-import { StyleSheet, SafeAreaView, Button, Text } from "react-native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  Text,
+} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -11,10 +15,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function JobDescription() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text>Job</Text>
-    </SafeAreaView>
-  );
+export default function SearchJobList() {
+  return <SafeAreaView style={styles.container}></SafeAreaView>;
 }

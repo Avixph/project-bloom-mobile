@@ -1,14 +1,36 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import LandingScreen from "../screens/Landing";
 import HomeScreen from "../screens/Home";
 import SearchScreen from "../screens/Search";
 import AboutScreen from "../screens/About";
 import Header from "../components/Header";
 import LightsOut from "../components/LightsOut";
 
+const LandingStack = createStackNavigator();
 const HomeStack = createStackNavigator();
 const SearchStack = createStackNavigator();
 const AboutStack = createStackNavigator();
+
+export const LandingStackScreen = () => (
+  <LandingStack.Navigator>
+    <LandingStack.Screen
+      name="Landing"
+      component={LandingScreen}
+      options={{
+        headerTitle: (props) => <Header {...props} />,
+        headerStyle: {
+          backgroundColor: "#d9bbf2",
+          borderBottomColor: "#d9bbf2",
+          borderBottomWidth: 1.5,
+          height: 100,
+          // marginHorizontal: 200,
+        },
+        headerRight: () => <LightsOut />,
+      }}
+    />
+  </LandingStack.Navigator>
+);
 
 export const HomeStackScreen = () => (
   <HomeStack.Navigator>
@@ -22,6 +44,7 @@ export const HomeStackScreen = () => (
           borderBottomColor: "#d9bbf2",
           borderBottomWidth: 1.5,
           height: 100,
+          // marginHorizontal: 200,
         },
         headerRight: () => <LightsOut />,
       }}

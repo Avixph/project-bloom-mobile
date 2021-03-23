@@ -16,6 +16,8 @@ import {
   FlatList,
   Image,
 } from "react-native";
+import SearchField from "../components/SearchField";
+import SearchJobList from "../components/SearchJobList";
 
 
 
@@ -37,67 +39,12 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function SearchScreen() {
-  const [search, setSearch] = useState("");
 
-  
-  const dispatch = useDispatch();
-  const jobsRequest = useSelector((state) => state.searches.searchJobs);
-  const status = useSelector((state) => state.searches.status);
-
-  console.log(jobsRequest.company_name);
-  
-  function handleSearch() {
-    const field = search;
-    dispatch(fetchSearch(field));
-  }
-
-
-  
-
-
+export default function Search() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Home</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="search for jobs"
-        keyboardType="default"
-        onChangeText={((val) => setSearch(val))}
-      />
-      <TouchableOpacity
-        onPress={ handleSearch }
-      >
-        <Text>Search</Text>
-      </TouchableOpacity>
-      <View>
-        <FlatList
-          data={jobsRequest}
-          renderItem={({ item }) => (
-            <View>
-              <Image
-                style={styles.companyLogo}
-                source={{uri: `${item.company_logo_url}`}}
-              />
-              <Text>{item.title}</Text>
-              <Text>{item.company_name}</Text>
-            </View>
-          )}
-        />
-
-
-        {/* {jobsRequest.map((item, index) => {
-          return (
-            <View key={index}>
-            <Image
-                source={{uri: `${item.company_logo_url}`}}
-              />
-              <Text>{item.title}</Text>
-              <Text>{item.company_name}</Text>
-            </View>
-          )
-        })} */}
-      </View>
+      <SearchField />
+      <SearchJobList />
     </SafeAreaView>
   );
 }
