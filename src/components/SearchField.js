@@ -1,12 +1,13 @@
-import React from "react";
-// import { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   StyleSheet,
   SafeAreaView,
-  Button,
+  TouchableOpacity,
   Text,
   TextInput,
 } from "react-native";
+import { fetchSearch } from "../redux/searchJobSlice";
 
 const styles = StyleSheet.create({
   container: {
@@ -28,6 +29,13 @@ const styles = StyleSheet.create({
 });
 
 export default function SearchField() {
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
+
+  function handleSearch() {
+    const field = search;
+    dispatch(fetchSearch(field));
+  }
   return (
     <SafeAreaView style={styles.container}>
       <Text>Home</Text>
@@ -35,8 +43,11 @@ export default function SearchField() {
         style={styles.input}
         placeholder="search for jobs"
         keyboardType="default"
+        onChangeText={(val) => setSearch(val)}
       />
-      <Button title="Search" />
+      <TouchableOpacity onPress={handleSearch}>
+        <Text>Search</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
