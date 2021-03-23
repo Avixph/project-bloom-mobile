@@ -1,14 +1,25 @@
 import React from "react";
-// import { useState, useEffect } from "react";
+import { useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+//Thunk
+import { fetchSearch } from "../redux/searchJobSlice"
+
 import {
   StyleSheet,
   SafeAreaView,
   Button,
   Text,
   TextInput,
+  TouchableOpacity,
+  View,
+  FlatList,
+  Image,
 } from "react-native";
 import SearchField from "../components/SearchField";
 import SearchJobList from "../components/SearchJobList";
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -22,7 +33,12 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
   },
+  companyLogo: {
+    width: 100,
+    height: 100,
+  }
 });
+
 
 export default function Search() {
   return (
