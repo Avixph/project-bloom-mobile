@@ -7,6 +7,7 @@ import {
   FlatList,
   Image,
   Text,
+  ScrollView,
 } from "react-native";
 
 const styles = StyleSheet.create({
@@ -32,7 +33,7 @@ export default function SearchJobList() {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <FlatList
+        {/* <FlatList
           data={jobsRequest}
           renderItem={({ item }) => (
             <View>
@@ -44,19 +45,21 @@ export default function SearchJobList() {
               <Text>{item.company_name}</Text>
             </View>
           )}
-        />
-
-        {/* {jobsRequest.map((item, index) => {
-          return (
-            <View key={index}>
-            <Image
-                source={{uri: `${item.company_logo_url}`}}
+        /> */}
+        <ScrollView style={styles.scrollView}>
+          {jobsRequest.map((item, index) => {
+            return (
+              <View key={index}>
+               <Image
+                style={styles.companyLogo}
+                source={{ uri: `${item.company_logo_url}` }}
               />
-              <Text>{item.title}</Text>
-              <Text>{item.company_name}</Text>
-            </View>
-          )
-        })} */}
+                <Text>{item.title}</Text>
+                <Text>{item.company_name}</Text>
+              </View>
+            )
+          })}
+        </ScrollView>
       </View>
     </SafeAreaView>
   );

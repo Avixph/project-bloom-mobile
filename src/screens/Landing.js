@@ -49,7 +49,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Landing({ navigation }) {
+export default function Landing({navigation}) {
+
+  
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -64,7 +66,8 @@ export default function Landing({ navigation }) {
       <TouchableOpacity
         title="Enter"
         style={styles.button}
-        onPress={() => navigation.navigate("BottomTab")}
+
+        onPress={() => navigation.navigate("RootStackScreen", {screen: 'MainApp'})}
       >
         <Text style={styles.buttonText}>Enter</Text>
       </TouchableOpacity>

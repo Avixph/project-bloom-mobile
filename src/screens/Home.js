@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList>
@@ -57,7 +57,7 @@ export default function Home() {
           resizeMode="contain"
           style={styles.bannerImage}
         />
-        <RandomJobList />
+        <RandomJobList navigation={ navigation } />
       </ScrollView>
     </SafeAreaView>
   );

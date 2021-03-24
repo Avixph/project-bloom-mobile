@@ -8,16 +8,21 @@ import LightsOut from "../components/LightsOut";
 
 const RootStack = createStackNavigator();
 
+
 export default function RootStackScreen() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
 
+
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(!loading);
-      setUser({});
-    }, 500);
+      // setUser({});
+    }, 800);
   }, []);
+
+
 
   return (
     <RootStack.Navigator>
@@ -32,7 +37,7 @@ export default function RootStackScreen() {
         />
       ) : user ? (
         <RootStack.Screen
-          name="mainApp"
+          name="MainApp"
           component={BottomTab}
           options={{
             animationEnabled: false,
@@ -41,7 +46,7 @@ export default function RootStackScreen() {
         />
       ) : (
         <RootStack.Screen
-          name="enterance"
+          name="Enterance"
           component={Landing}
           options={{
             animationEnabled: false,
