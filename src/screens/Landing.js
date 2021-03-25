@@ -7,7 +7,7 @@ import {
   Text,
   Image,
 } from "react-native";
-import { useUser, useUpdate } from "../HandleScreen";
+import { useUpdate } from "../HandleScreen"; //Here we have the two functions that will allow us to get the values from both object contexts (UserContext has the use state of null) & (UserUpdate has the handleUser function which will update the use state from null -> {})
 
 const landingBannerLight = require("../images/design_elements/project-bloom-landing-banner-light.png");
 
@@ -50,11 +50,12 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Landing({ navigation }) {
-  const user = useUser();
-  console.log(user);
+export default function Landing() {
+  
+  //the landing child component is getting the handleUser function from UserUpdate (object context)
   const updateUser = useUpdate();
   console.log(updateUser);
+
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -69,6 +70,7 @@ export default function Landing({ navigation }) {
       <TouchableOpacity
         title="Enter"
         style={styles.button}
+        //when button is pressed, the handleUser function will change the use state from null -> {}. Go to RootStack.js to see what happens to the use state which is being access from UserContext
         onPress={updateUser}
       >
         <Text style={styles.buttonText}>Enter</Text>

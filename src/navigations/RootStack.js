@@ -3,19 +3,29 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { LandingStackScreen as Landing } from "./ScreenStack";
 import BottomTab from "./BottomTab";
 import Loading from "../components/Loading";
-import Header from "../components/Header";
-import LightsOut from "../components/LightsOut";
-import { useUser, UserUpdate } from "../HandleScreen";
+// import Header from "../components/Header";
+// import LightsOut from "../components/LightsOut";
+
+import { useUser } from "../HandleScreen"; //this is how we're getting the value from the UserContext (object context) which has the user state of null
+
 
 const RootStack = createStackNavigator();
 
 
 export default function RootStackScreen() {
-  const [loading, setLoading] = useState(false);
-  // const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(
+    () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000)
+    }
+  , [])
+
+  //the RootStack child component is getting the null value from UserContext context component
   const user = useUser();
-
-
+  console.log(user)
 
   return (
     <RootStack.Navigator>

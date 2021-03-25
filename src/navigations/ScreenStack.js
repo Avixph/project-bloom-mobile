@@ -77,6 +77,19 @@ export const SearchStackScreen = () => (
         headerRight: () => <LightsOut />,
       }}
     />
+    <SearchStack.Screen
+      name="Details"
+      component={JobDescriptionScreen}
+      options={{
+        // tabBarVisible: false,
+        headerStyle: {
+          backgroundColor: "#d9bbf2",
+          borderBottomColor: "#d9bbf2",
+          borderBottomWidth: 1.5,
+        },
+        headerRight: () => <LightsOut />,
+      }}
+    />
   </SearchStack.Navigator>
 );
 
