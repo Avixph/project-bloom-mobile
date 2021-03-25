@@ -32,7 +32,7 @@ export default function RootStackScreen() {
         />
       ) : user ? (
         <RootStack.Screen
-          name="mainApp"
+          name="MainApp"
           component={BottomTab}
           options={{
             animationEnabled: false,
@@ -41,7 +41,7 @@ export default function RootStackScreen() {
         />
       ) : (
         <RootStack.Screen
-          name="enterance"
+          name="Enterance"
           component={Landing}
           options={{
             animationEnabled: false,

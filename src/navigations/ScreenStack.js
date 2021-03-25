@@ -4,6 +4,7 @@ import LandingScreen from "../screens/Landing";
 import HomeScreen from "../screens/Home";
 import SearchScreen from "../screens/Search";
 import AboutScreen from "../screens/About";
+import JobDescriptionScreen from "../screens/JobDescription";
 import Header from "../components/Header";
 import LightsOut from "../components/LightsOut";
 
@@ -23,8 +24,6 @@ export const LandingStackScreen = () => (
           backgroundColor: "#d9bbf2",
           borderBottomColor: "#d9bbf2",
           borderBottomWidth: 1.5,
-          height: 100,
-          // marginHorizontal: 200,
         },
         headerRight: () => <LightsOut />,
       }}
@@ -43,8 +42,19 @@ export const HomeStackScreen = () => (
           backgroundColor: "#d9bbf2",
           borderBottomColor: "#d9bbf2",
           borderBottomWidth: 1.5,
-          height: 100,
-          // marginHorizontal: 200,
+        },
+        headerRight: () => <LightsOut />,
+      }}
+    />
+    <HomeStack.Screen
+      name="Details"
+      component={JobDescriptionScreen}
+      options={{
+        // tabBarVisible: false,
+        headerStyle: {
+          backgroundColor: "#d9bbf2",
+          borderBottomColor: "#d9bbf2",
+          borderBottomWidth: 1.5,
         },
         headerRight: () => <LightsOut />,
       }}
@@ -62,8 +72,7 @@ export const SearchStackScreen = () => (
         headerStyle: {
           backgroundColor: "#d9bbf2",
           borderBottomColor: "#d9bbf2",
-          borderBottomWidth: 4,
-          height: 100,
+          borderBottomWidth: 1.5,
         },
         headerRight: () => <LightsOut />,
       }}
@@ -81,8 +90,7 @@ export const AboutStackScreen = () => (
         headerStyle: {
           backgroundColor: "#d9bbf2",
           borderBottomColor: "#d9bbf2",
-          borderBottomWidth: 4,
-          height: 100,
+          borderBottomWidth: 1.5,
         },
         headerRight: () => <LightsOut />,
       }}
