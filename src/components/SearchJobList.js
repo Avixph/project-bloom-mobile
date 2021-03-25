@@ -33,9 +33,6 @@ const styles = StyleSheet.create({
 
 export default function SearchJobList({navigate}) {
   const jobsRequest = useSelector((state) => state.searches.searchJobs);
-  const status = useSelector((state) => state.searches.status);
-
-  console.log(jobsRequest.company_name);
 
 
   const renderSearchList = () => {
@@ -49,9 +46,6 @@ export default function SearchJobList({navigate}) {
     <SafeAreaView style={styles.container}>
       <View>
         <ScrollView style={styles.scrollView}>
-          
-
-
           <View>{renderSearchList()}</View>
         </ScrollView>
       </View>

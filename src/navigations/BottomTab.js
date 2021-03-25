@@ -30,7 +30,11 @@ export default function BottomTab() {
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="home"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
@@ -43,7 +47,11 @@ export default function BottomTab() {
           },
           tabBarLabel: "Search",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="magnify"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
