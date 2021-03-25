@@ -17,6 +17,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
   },
+  flatList: {
+    backgroundColor: "pink",
+    marginTop: -25,
+    width: "99.53%",
+  },
   companyLogo: {
     width: 128,
     height: 128,
@@ -35,6 +40,7 @@ export default function SearchJobList() {
       <View>
         {/* <FlatList
           data={jobsRequest}
+          style={styles.flatList}
           renderItem={({ item }) => (
             <View>
               <Image
