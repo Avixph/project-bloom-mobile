@@ -1,6 +1,21 @@
-import React from "react";
-// import { useState, useEffect } from "react";
-import { StyleSheet, SafeAreaView, TouchableOpacity, Text } from "react-native";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  TouchableOpacity,
+  ScrollView,
+  Text,
+  Image,
+  StatusBar,
+} from "react-native";
+import { fetchRandom } from "../redux/randomJobSlice";
+import JobPost from "./JobPost";
+
+const homeBannerLight = require("../images/design_elements/project-bloom-home-banner-light.png");
+
+const homeBannerDark = require("../images/design_elements/project-bloom-home-banner-dark.png");
 
 const styles = StyleSheet.create({
   container: {
@@ -8,23 +23,59 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
+    paddingTop: StatusBar.currentHeight,
   },
-  button: {
-    width: 100,
-    height: 20,
-    backgroundColor: "#aa88c67b",
-    alignItems: "center",
-    borderRadius: 10,
+  scrollView: {
+    backgroundColor: "pink",
+    // marginTop: -25,
+    width: 385,
+  },
+  bannerImage: {
+    flex: 1,
+    marginHorizontal: 40,
+    marginTop: -200,
+    marginBottom: -200,
+    width: "80%",
   },
 });
 
-export default function RandomJobList() {
+export default function RandomJobList({ navigate }) {
+  const RandomJobRequest = useSelector((state) => {
+    return state.randoms.randomJobs;
+  });
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRandom());
+  }, [dispatch]);
+
+  const handleReload = () => {
+    dispatch(fetchRandom());
+  };
+
+  const renderRandomList = () => {
+    return RandomJobRequest.map((jobInfo, index) => {
+      return <JobPost {...jobInfo} navigate={navigate} key={index} />;
+    });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Remote Jobs available</Text>
-      <TouchableOpacity style={styles.button}>
-        <Text>reload</Text>
-      </TouchableOpacity>
+      <ScrollView style={styles.scrollView}>
+        <View></View>
+        <Text>Welcome</Text>
+        <Image
+          source={homeBannerLight}
+          resizeMode="contain"
+          style={styles.bannerImage}
+        />
+        <Text>Remote Jobs available</Text>
+        <TouchableOpacity style={styles.button} onPress={handleReload}>
+          <Text>reload</Text>
+        </TouchableOpacity>
+        <View>{renderRandomList()}</View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

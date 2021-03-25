@@ -8,7 +8,7 @@ export const fetchRandom = createAsyncThunk(
     console.log(`There are ${data.length} jobs!`);
 
     const randomData = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       const randomIndex = Math.floor(Math.random() * data.length);
       randomData.push(data[randomIndex]);
       data.splice(randomIndex, 1);
