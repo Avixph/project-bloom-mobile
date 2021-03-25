@@ -7,6 +7,7 @@ import {
   Text,
   Image,
 } from "react-native";
+import { useUser, useUpdate } from "../HandleScreen";
 
 const landingBannerLight = require("../images/design_elements/project-bloom-landing-banner-light.png");
 
@@ -49,9 +50,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Landing({navigation}) {
-
-  
+export default function Landing({ navigation }) {
+  const user = useUser();
+  console.log(user);
+  const updateUser = useUpdate();
+  console.log(updateUser);
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -66,8 +69,7 @@ export default function Landing({navigation}) {
       <TouchableOpacity
         title="Enter"
         style={styles.button}
-
-        onPress={() => navigation.navigate("RootStackScreen", {screen: 'MainApp'})}
+        onPress={updateUser}
       >
         <Text style={styles.buttonText}>Enter</Text>
       </TouchableOpacity>

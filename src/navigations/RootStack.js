@@ -5,22 +5,15 @@ import BottomTab from "./BottomTab";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
 import LightsOut from "../components/LightsOut";
+import { useUser, UserUpdate } from "../HandleScreen";
 
 const RootStack = createStackNavigator();
 
 
 export default function RootStackScreen() {
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
-
-
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(!loading);
-      // setUser({});
-    }, 800);
-  }, []);
+  const [loading, setLoading] = useState(false);
+  // const [user, setUser] = useState(null);
+  const user = useUser();
 
 
 
