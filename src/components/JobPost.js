@@ -46,7 +46,6 @@ export default function JobPost(props) {
     <SafeAreaView style={styles.container}>
       <TouchableOpacity onPress={showDetails}>
         <Image source={companyLogo} style={styles.companyLogo} />
-
         <Text>{props.title}</Text>
         <Text>{props.company_name}</Text>
         <Text>{props.category}</Text>

@@ -17,3 +17,6 @@ export default function App() {
     </Provider>
   );
 }
+
+
+//UserProvider has all the Provider each with a value being fed in the object context. This Providers are being given to the RootStackScreen component. The user value is being fed into the UserContext object context, and the handle function is being fed into the UpdateContext object context

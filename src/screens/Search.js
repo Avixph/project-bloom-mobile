@@ -1,20 +1,10 @@
 import React from "react";
-import { useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
 
-//Thunk
-import { fetchSearch } from "../redux/searchJobSlice"
+
 
 import {
   StyleSheet,
   SafeAreaView,
-  Button,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-  FlatList,
-  Image,
 } from "react-native";
 import SearchField from "../components/SearchField";
 import SearchJobList from "../components/SearchJobList";
@@ -40,11 +30,11 @@ const styles = StyleSheet.create({
 });
 
 
-export default function Search() {
+export default function Search({ navigation: {navigate }}) {
   return (
     <SafeAreaView style={styles.container}>
       <SearchField />
-      <SearchJobList />
+      <SearchJobList navigate={navigate} />
     </SafeAreaView>
   );
 }
