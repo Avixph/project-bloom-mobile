@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useLight, useUpdateLight } from "../contexts/HandleLightsOut"
+import { useUpdateLight } from "../contexts/HandleLightsOut";
 
 
 
@@ -23,8 +23,6 @@ const styles = StyleSheet.create({
 
 
 export default function LightsOut() {
-
-  const lightState = useLight();
 
   const updateLightState = useUpdateLight();
 

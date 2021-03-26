@@ -94,7 +94,7 @@ export default function Landing() {
   const updateUser = useUpdate();
 
   const lightState = useLight();
-  console.log(lightState);
+  
 
   return (
     <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
