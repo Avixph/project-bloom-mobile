@@ -6,12 +6,12 @@ import React, { useState, useContext, createContext } from "react";
 const UserContext = createContext();
 const UserUpdate = createContext();
 
-//this function will be called in children components to they have access to the context object called 'UserContext' to get the value stored in there.
+//this function will be called in children components so they have access to the context object called 'UserContext' to get the value stored in there.
 export const useUser = () => {
   return useContext(UserContext);
 };
 
-//this function will be called in children components to they have access to the context object called 'UserUpdate' to get the value stored in there.
+//this function will be called in children components so they have access to the context object called 'UserUpdate' to get the value stored in there.
 export const useUpdate = () => {
   return useContext(UserUpdate);
 };

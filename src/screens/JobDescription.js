@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
 });
 
 export default function JobDescription({ route: { params } }) {
+
   const companyLogo = params.logo ? { uri: `${params.logo}` } : noImage;
 
   const openLink = () => {

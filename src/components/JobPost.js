@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
 });
 
 export default function JobPost(props) {
+  
   const companyLogo = props.company_logo_url
     ? { uri: `${props.company_logo_url}` }
     : noImage;

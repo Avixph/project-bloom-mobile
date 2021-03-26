@@ -7,7 +7,7 @@ import {
   Text,
   Image,
 } from "react-native";
-import { useUpdate } from "../HandleScreen"; //Here we have the two functions that will allow us to get the values from both object contexts (UserContext has the use state of null) & (UserUpdate has the handleUser function which will update the use state from null -> {})
+import { useUpdate } from "../contexts/HandleScreen"; //Here we have the two functions that will allow us to get the values from both object contexts (UserContext has the use state of null) & (UserUpdate has the handleUser function which will update the use state from null -> {})
 
 const landingBannerLight = require("../images/design_elements/project-bloom-landing-banner-light.png");
 

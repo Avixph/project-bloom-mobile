@@ -65,7 +65,7 @@ export const HomeStackScreen = () => (
 export const SearchStackScreen = () => (
   <SearchStack.Navigator>
     <SearchStack.Screen
-      name="search"
+      name="Search"
       component={SearchScreen}
       options={{
         headerTitle: (props) => <Header {...props} />,
@@ -77,7 +77,6 @@ export const SearchStackScreen = () => (
         headerRight: () => <LightsOut />,
       }}
     />
-
     <SearchStack.Screen
       name="Details"
       component={JobDescriptionScreen}
@@ -91,7 +90,6 @@ export const SearchStackScreen = () => (
         headerRight: () => <LightsOut />,
       }}
     />
-    
   </SearchStack.Navigator>
 );
 
