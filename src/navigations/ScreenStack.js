@@ -19,7 +19,6 @@ const AboutStack = createStackNavigator();
 export const LandingStackScreen = () => {
  
   const lightState = useLight();
-
   const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
   
   return  (<LandingStack.Navigator>
@@ -40,36 +39,41 @@ export const LandingStackScreen = () => {
   )
 };
 
-export const HomeStackScreen = () => (
-  <HomeStack.Navigator>
-    <HomeStack.Screen
-      name="Home"
-      component={HomeScreen}
-      options={{
-        headerTitle: (props) => <Header {...props} />,
-        headerStyle: {
-          backgroundColor: "#d9bbf2",
-          borderBottomColor: "#d9bbf2",
-          borderBottomWidth: 1.5,
-        },
-        headerRight: () => <LightsOut />,
-      }}
-    />
-    <HomeStack.Screen
-      name="Details"
-      component={JobDescriptionScreen}
-      options={{
-        // tabBarVisible: false,
-        headerStyle: {
-          backgroundColor: "#d9bbf2",
-          borderBottomColor: "#d9bbf2",
-          borderBottomWidth: 1.5,
-        },
-        headerRight: () => <LightsOut />,
-      }}
-    />
-  </HomeStack.Navigator>
-);
+export const HomeStackScreen = () => {
+  const lightState = useLight();
+  const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
+  
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerTitle: (props) => <Header {...props} />,
+          headerStyle: {
+            backgroundColor: lightDarkColor,
+            borderBottomColor: lightDarkColor,
+            borderBottomWidth: 1.5,
+          },
+          headerRight: () => <LightsOut />,
+        }}
+      />
+      <HomeStack.Screen
+        name="Details"
+        component={JobDescriptionScreen}
+        options={{
+          // tabBarVisible: false,
+          headerStyle: {
+            backgroundColor: lightDarkColor,
+            borderBottomColor: lightDarkColor,
+            borderBottomWidth: 1.5,
+          },
+          headerRight: () => <LightsOut />,
+        }}
+      />
+    </HomeStack.Navigator>
+  )
+};
 
 export const SearchStackScreen = () => (
   <SearchStack.Navigator>
