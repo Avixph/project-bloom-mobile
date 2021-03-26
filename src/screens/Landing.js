@@ -26,6 +26,7 @@ const stylesLight = StyleSheet.create({
     width: "95%",
   },
   slogan: {
+    color: "#240046",
     fontSize: 40,
     fontWeight: "200",
     textAlign: "center",
@@ -54,7 +55,7 @@ const stylesDark = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#d9bbf2",
+    backgroundColor: "#250246",
   },
   bannerImage: {
     flex: 1,
@@ -63,6 +64,7 @@ const stylesDark = StyleSheet.create({
     width: "95%",
   },
   slogan: {
+    color: "#e5e5e5",
     fontSize: 40,
     fontWeight: "200",
     textAlign: "center",
@@ -101,17 +103,17 @@ export default function Landing() {
         resizeMode="contain"
         style={lightState ? stylesDark.bannerImage : stylesLight.bannerImage}
       />
-      <Text style={stylesLight.slogan}>
+      <Text style={lightState ? stylesDark.slogan : stylesLight.slogan}>
         “Helping you blossom into your next career”
       </Text>
 
       <TouchableOpacity
         title="Enter"
-        style={stylesLight.button}
+        style={lightState ? stylesDark.button : stylesLight.button}
         //when button is pressed, the handleUser function will change the use state from null -> {}. Go to RootStack.js to see what happens to the use state which is being access from UserContext
         onPress={updateUser}
       >
-        <Text style={stylesLight.buttonText}>Enter</Text>
+        <Text style={lightState ? stylesDark.buttonText : stylesLight.buttonText}>Enter</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
