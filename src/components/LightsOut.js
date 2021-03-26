@@ -25,11 +25,8 @@ const styles = StyleSheet.create({
 export default function LightsOut() {
 
   const lightState = useLight();
-  console.log(lightState);
-  
+
   const updateLightState = useUpdateLight();
-
-
 
   return (
     <TouchableOpacity
