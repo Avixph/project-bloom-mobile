@@ -1,6 +1,9 @@
 import React from "react";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useLight, useUpdateLight } from "../contexts/HandleLightsOut"
+
+
 
 const styles = StyleSheet.create({
   button: {
@@ -20,10 +23,18 @@ const styles = StyleSheet.create({
 
 
 export default function LightsOut() {
+
+  const lightState = useLight();
+  console.log(lightState);
+  
+  const updateLightState = useUpdateLight();
+
+
+
   return (
     <TouchableOpacity
       style={styles.button}
-      onPress={() => alert("This is a button!")}
+      onPress={updateLightState}
     >
       <MaterialCommunityIcons
         name="lightbulb"
