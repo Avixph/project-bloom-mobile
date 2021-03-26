@@ -12,12 +12,14 @@ import {
 } from "react-native";
 import { fetchRandom } from "../redux/randomJobSlice";
 import JobPost from "./JobPost";
+import { useLight } from "../contexts/HandleLightsOut";
+
 
 const homeBannerLight = require("../images/design_elements/project-bloom-home-banner-light.png");
 
 const homeBannerDark = require("../images/design_elements/project-bloom-home-banner-dark.png");
 
-const styles = StyleSheet.create({
+const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
@@ -39,10 +41,35 @@ const styles = StyleSheet.create({
   },
 });
 
+const stylesDark = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#250246",
+    paddingTop: StatusBar.currentHeight,
+  },
+  scrollView: {
+    backgroundColor: "pink",
+    // marginTop: -25,
+    width: 385,
+  },
+  bannerImage: {
+    flex: 1,
+    marginHorizontal: 40,
+    marginTop: -200,
+    marginBottom: -200,
+    width: "80%",
+  },
+});
+
 export default function RandomJobList({ navigate }) {
   const RandomJobRequest = useSelector((state) => {
     return state.randoms.randomJobs;
   });
+
+  const lightState = useLight();
+
 
   const dispatch = useDispatch();
 
@@ -61,17 +88,17 @@ export default function RandomJobList({ navigate }) {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
+      <ScrollView style={lightState ? stylesDark.scrollView : stylesLight.scrollView}>
         <View></View>
         <Text>Welcome</Text>
         <Image
-          source={homeBannerLight}
+          source={lightState ? homeBannerDark : homeBannerLight}
           resizeMode="contain"
-          style={styles.bannerImage}
+          style={lightState ? stylesDark.bannerImage : stylesLight.bannerImage}
         />
         <Text>Remote Jobs available</Text>
-        <TouchableOpacity style={styles.button} onPress={handleReload}>
+        <TouchableOpacity style={lightState ? stylesDark.button : stylesLight.button} onPress={handleReload}>
           <Text>reload</Text>
         </TouchableOpacity>
         <View>{renderRandomList()}</View>

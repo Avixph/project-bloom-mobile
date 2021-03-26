@@ -111,20 +111,25 @@ export const SearchStackScreen = () => {
   )
 };
 
-export const AboutStackScreen = () => (
-  <AboutStack.Navigator>
-    <AboutStack.Screen
-      name="About"
-      component={AboutScreen}
-      options={{
-        headerTitle: () => <Header />,
-        headerStyle: {
-          backgroundColor: "#d9bbf2",
-          borderBottomColor: "#d9bbf2",
-          borderBottomWidth: 1.5,
-        },
-        headerRight: () => <LightsOut />,
-      }}
-    />
-  </AboutStack.Navigator>
-);
+export const AboutStackScreen = () => {
+  const lightState = useLight();
+  const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
+  
+  return (
+    <AboutStack.Navigator>
+      <AboutStack.Screen
+        name="About"
+        component={AboutScreen}
+        options={{
+          headerTitle: () => <Header />,
+          headerStyle: {
+            backgroundColor: lightDarkColor,
+            borderBottomColor: lightDarkColor,
+            borderBottomWidth: 1.5,
+          },
+          headerRight: () => <LightsOut />,
+        }}
+      />
+    </AboutStack.Navigator>
+  )
+};
