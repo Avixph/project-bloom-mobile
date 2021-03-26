@@ -75,36 +75,41 @@ export const HomeStackScreen = () => {
   )
 };
 
-export const SearchStackScreen = () => (
-  <SearchStack.Navigator>
-    <SearchStack.Screen
-      name="Search"
-      component={SearchScreen}
-      options={{
-        headerTitle: (props) => <Header {...props} />,
-        headerStyle: {
-          backgroundColor: "#d9bbf2",
-          borderBottomColor: "#d9bbf2",
-          borderBottomWidth: 1.5,
-        },
-        headerRight: () => <LightsOut />,
-      }}
-    />
-    <SearchStack.Screen
-      name="Details"
-      component={JobDescriptionScreen}
-      options={{
-        // tabBarVisible: false,
-        headerStyle: {
-          backgroundColor: "#d9bbf2",
-          borderBottomColor: "#d9bbf2",
-          borderBottomWidth: 1.5,
-        },
-        headerRight: () => <LightsOut />,
-      }}
-    />
-  </SearchStack.Navigator>
-);
+export const SearchStackScreen = () => {
+  const lightState = useLight();
+  const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
+  
+  return (
+    <SearchStack.Navigator>
+      <SearchStack.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          headerTitle: (props) => <Header {...props} />,
+          headerStyle: {
+            backgroundColor: lightDarkColor,
+            borderBottomColor: lightDarkColor,
+            borderBottomWidth: 1.5,
+          },
+          headerRight: () => <LightsOut />,
+        }}
+      />
+      <SearchStack.Screen
+        name="Details"
+        component={JobDescriptionScreen}
+        options={{
+          // tabBarVisible: false,
+          headerStyle: {
+            backgroundColor: lightDarkColor,
+            borderBottomColor: lightDarkColor,
+            borderBottomWidth: 1.5,
+          },
+          headerRight: () => <LightsOut />,
+        }}
+      />
+    </SearchStack.Navigator>
+  )
+};
 
 export const AboutStackScreen = () => (
   <AboutStack.Navigator>
