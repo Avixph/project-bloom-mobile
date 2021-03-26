@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import RootStackScreen from "./navigations/RootStack";
 import { UserProvider } from "./contexts/HandleScreen";
+import { LightProvider } from
 
 export default function App() {
   return (
