@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
 });
 
 
-export default function Search() {
+export default function Search({ navigation: {navigate }}) {
   return (
     <SafeAreaView style={styles.container}>
       <SearchField />
-      <SearchJobList />
+      <SearchJobList navigate={navigate} />
     </SafeAreaView>
   );
 }
