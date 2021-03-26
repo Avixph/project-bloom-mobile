@@ -8,8 +8,10 @@ import {
   TextInput,
 } from "react-native";
 import { fetchSearch } from "../redux/searchJobSlice";
+import { useLight } from "../contexts/HandleLightsOut";
 
-const styles = StyleSheet.create({
+
+const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
@@ -21,6 +23,9 @@ const styles = StyleSheet.create({
   //   borderBottomColor: "#737373",
   //   borderBottomWidth: StyleSheet.hairlineWidth,
   // },
+  text: {
+    color: "#000000",
+  },
   input: {
     height: 40,
     margin: 12,
@@ -28,25 +33,51 @@ const styles = StyleSheet.create({
   },
 });
 
+const stylesDark = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#250246",
+  },
+  // separator: {
+  //   marginVertical: 8,
+  //   borderBottomColor: "#737373",
+  //   borderBottomWidth: StyleSheet.hairlineWidth,
+  // },
+  text: {
+    color: "#e5e5e5",
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    color: "#e5e5e5",
+  },
+});
+
 export default function SearchField() {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
+
+  const lightState = useLight();
 
   function handleSearch() {
     const field = search;
     dispatch(fetchSearch(field));
   }
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Home</Text>
+    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
+      <Text style={lightState ? stylesDark.text : stylesLight.text}>Home</Text>
       <TextInput
-        style={styles.input}
+        style={lightState ? stylesDark.input : stylesLight.input}
         placeholder="search for jobs"
         keyboardType="default"
         onChangeText={(val) => setSearch(val)}
       />
       <TouchableOpacity onPress={handleSearch}>
-        <Text>Search</Text>
+        <Text style={lightState ? stylesDark.text : stylesLight.text}>Search</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
