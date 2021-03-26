@@ -19,8 +19,8 @@ const stylesLight = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
   },
-  jobText: {
-    color: "#00000",
+  text: {
+    color: "#000000",
   },
   companyLogo: {
     width: 128,
