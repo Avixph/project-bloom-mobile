@@ -5,15 +5,17 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import RootStackScreen from "./navigations/RootStack";
 import { UserProvider } from "./contexts/HandleScreen";
-import { LightProvider } from
+import { LightProvider } from "./contexts/HandleLightsOut"
 
 export default function App() {
   return (
     <Provider store={store}>
       <UserProvider>
-        <NavigationContainer>
-          <RootStackScreen />
-        </NavigationContainer>
+        <LightProvider>
+          <NavigationContainer>
+            <RootStackScreen />
+          </NavigationContainer>
+        </LightProvider>
       </UserProvider>
     </Provider>
   );

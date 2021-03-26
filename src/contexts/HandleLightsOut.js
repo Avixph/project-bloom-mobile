@@ -15,7 +15,7 @@ export const useUpdateLight = () => {
 }
 
 
-export default function LightProvider() {
+export const LightProvider = (props) => {
 
   const [light, setLight] = useState(false);
   const handleLight = () => {
@@ -29,9 +29,9 @@ export default function LightProvider() {
 
   return (
     <LightContext.Provider value={light}>
-      <UpdateLight value={handleLight}>
-
-      </UpdateLight>
+      <UpdateLight.Provider value={handleLight}>
+        {props.children}
+      </UpdateLight.Provider>
     </LightContext.Provider>
   )
 }
