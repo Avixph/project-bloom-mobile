@@ -6,7 +6,7 @@ import Loading from "../components/Loading";
 // import Header from "../components/Header";
 // import LightsOut from "../components/LightsOut";
 
-import { useUser } from "../HandleScreen"; //this is how we're getting the value from the UserContext (object context) which has the user state of null
+import { useUser } from "../contexts/HandleScreen"; //this is how we're getting the value from the UserContext (object context) which has the user state of null
 
 
 const RootStack = createStackNavigator();

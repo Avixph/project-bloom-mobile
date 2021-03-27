@@ -10,8 +10,9 @@ import {
   StatusBar,
 } from "react-native";
 import RandomJobList from "../components/RandomJobList";
+import { useLight } from "../contexts/HandleLightsOut";
 
-const styles = StyleSheet.create({
+const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
     width: "99.53%",
@@ -24,9 +25,26 @@ const styles = StyleSheet.create({
   },
 });
 
+const stylesDark = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: "99.53%",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#250246",
+  },
+  randomJobs: {
+    width: "99.53%",
+  },
+});
+
 export default function Home({ navigation: { navigate } }) {
+
+  const lightState = useLight();
+  console.log(lightState);
+
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
       <RandomJobList navigate={navigate} />
     </SafeAreaView>
   );

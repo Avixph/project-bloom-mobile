@@ -1,17 +1,16 @@
 import React from "react";
-
-
-
 import {
   StyleSheet,
   SafeAreaView,
 } from "react-native";
 import SearchField from "../components/SearchField";
 import SearchJobList from "../components/SearchJobList";
+import { useLight } from "../contexts/HandleLightsOut";
 
 
 
-const styles = StyleSheet.create({
+
+const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
@@ -29,10 +28,31 @@ const styles = StyleSheet.create({
   }
 });
 
+const stylesDark = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#250246",
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+  },
+  companyLogo: {
+    width: 100,
+    height: 100,
+  }
+});
 
-export default function Search({ navigation: {navigate }}) {
+
+export default function Search({ navigation: { navigate } }) {
+  const lightState = useLight();
+
+
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
       <SearchField />
       <SearchJobList navigate={navigate} />
     </SafeAreaView>

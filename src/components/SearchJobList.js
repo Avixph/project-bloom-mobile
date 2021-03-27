@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import {
   StyleSheet,
   SafeAreaView,
   View,
-  FlatList,
-  Image,
-  Text,
   ScrollView,
 } from "react-native";
 import JobPost from "./JobPost";
@@ -31,9 +28,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function SearchJobList({navigate}) {
+export default function SearchJobList({ navigate }) {
+  
   const jobsRequest = useSelector((state) => state.searches.searchJobs);
-
 
   const renderSearchList = () => {
     return jobsRequest.map((jobInfo, index) => {
