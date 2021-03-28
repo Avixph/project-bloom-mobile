@@ -18,6 +18,9 @@ const stylesLight = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
   },
+  text: {
+    color: "#240046",
+  }
 });
 
 const stylesDark = StyleSheet.create({
@@ -27,6 +30,9 @@ const stylesDark = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#250246",
   },
+  text: {
+    color: "#e5e5e5",
+  }
 });
 
 export default function AboutScreen() {
@@ -36,7 +42,7 @@ export default function AboutScreen() {
   return (
     <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
       <StatusBar barStyle={lightDarkStatusColor} />
-      <Text>About</Text>
+      <Text style={lightState ? stylesDark.text : stylesLight.text}>About</Text>
     </SafeAreaView>
   );
 }

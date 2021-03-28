@@ -17,12 +17,30 @@ import {
   Image,
 } from "react-native";
 
-const styles = StyleSheet.create({
+const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
+  },
+  companyLogo: {
+    width: 100,
+    height: 100,
+  },
+  scrollView: {
+    backgroundColor: "pink",
+    // marginTop: -25,
+    width: 385,
+  },
+});
+
+const stylesDark = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#250246",
   },
   companyLogo: {
     width: 100,
@@ -46,10 +64,10 @@ export default function JobDescription({ route: { params } }) {
   const lightDarkStatusColor = lightState ? "light-content" : "default";
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
       <StatusBar barStyle={lightDarkStatusColor} />
       <View>
-        <Image source={companyLogo} style={styles.companyLogo} />
+        <Image source={companyLogo} style={lightState ? stylesDark.companyLogo : stylesLight.companyLogo} />
         <Text>{params.title}</Text>
         <Text>{params.company}</Text>
         <View>
@@ -57,7 +75,7 @@ export default function JobDescription({ route: { params } }) {
           <Text>Hiring: {params.requirements}</Text>
           <Text>Job Hours: {params.hours}</Text>
         </View>
-        <ScrollView style={styles.scrollView}>
+        <ScrollView style={lightState ? stylesDark.scrollView : stylesLight.scrollView}>
           <WebView
             originWhitelist={["*"]}
             source={{ html: `${params.description}` }}
