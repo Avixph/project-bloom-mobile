@@ -1,14 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {
-  StyleSheet,
-  SafeAreaView,
-  View,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, SafeAreaView, View, ScrollView } from "react-native";
 import JobPost from "./JobPost";
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -29,15 +22,13 @@ const styles = StyleSheet.create({
 });
 
 export default function SearchJobList({ navigate }) {
-  
   const jobsRequest = useSelector((state) => state.searches.searchJobs);
 
   const renderSearchList = () => {
     return jobsRequest.map((jobInfo, index) => {
       return <JobPost {...jobInfo} navigate={navigate} key={index} />;
     });
-  }
-
+  };
 
   return (
     <SafeAreaView style={styles.container}>

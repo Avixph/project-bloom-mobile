@@ -1,13 +1,13 @@
 import React from "react";
 import {
   StyleSheet,
+  StatusBar,
   View,
   SafeAreaView,
   // FlatList,
   ScrollView,
   Text,
   Image,
-  StatusBar,
 } from "react-native";
 import RandomJobList from "../components/RandomJobList";
 import { useLight } from "../contexts/HandleLightsOut";
@@ -39,12 +39,15 @@ const stylesDark = StyleSheet.create({
 });
 
 export default function Home({ navigation: { navigate } }) {
-
   const lightState = useLight();
   console.log(lightState);
+  const lightDarkStatusColor = lightState ? "light-content" : "default";
 
   return (
-    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
+    <SafeAreaView
+      style={lightState ? stylesDark.container : stylesLight.container}
+    >
+      <StatusBar barStyle={lightDarkStatusColor} />
       <RandomJobList navigate={navigate} />
     </SafeAreaView>
   );

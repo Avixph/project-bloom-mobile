@@ -2,8 +2,7 @@ import React from "react";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useUpdateLight } from "../contexts/HandleLightsOut";
-
-
+import { useLight } from "../contexts/HandleLightsOut";
 
 const styles = StyleSheet.create({
   button: {
@@ -20,21 +19,17 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
 export default function LightsOut() {
-
   const updateLightState = useUpdateLight();
+  const lightState = useLight();
+  const lightDarkColor = lightState ? "#e5e5e5" : "#ffd085";
 
   return (
-    <TouchableOpacity
-      style={styles.button}
-      onPress={updateLightState}
-    >
+    <TouchableOpacity style={styles.button} onPress={updateLightState}>
       <MaterialCommunityIcons
         name="lightbulb"
         size={33}
-        color="#ffd085"
+        color={lightDarkColor}
         style={styles.icon}
       />
       <View></View>
