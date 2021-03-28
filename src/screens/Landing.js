@@ -1,6 +1,7 @@
 import React from "react";
 import {
   StyleSheet,
+  StatusBar,
   SafeAreaView,
   TouchableOpacity,
   Text,
@@ -9,7 +10,6 @@ import {
 
 import { useUpdate } from "../contexts/HandleScreen"; //Here we have the two functions that will allow us to get the values from both object contexts (UserContext has the use state of null) & (UserUpdate has the handleUser function which will update the use state from null -> {})
 import { useLight } from "../contexts/HandleLightsOut";
-
 
 const landingBannerLight = require("../images/design_elements/project-bloom-landing-banner-light.png");
 const landingBannerDark = require("../images/design_elements/project-bloom-landing-banner-dark.png");
@@ -91,15 +91,17 @@ const stylesDark = StyleSheet.create({
 });
 
 export default function Landing() {
-  
   //the landing child component is getting the handleUser function from UserUpdate (object context)
   const updateUser = useUpdate();
 
   const lightState = useLight();
-  
+  const lightDarkStatusColor = lightState ? "light-content" : "default";
 
   return (
-    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
+    <SafeAreaView
+      style={lightState ? stylesDark.container : stylesLight.container}
+    >
+      <StatusBar barStyle={lightDarkStatusColor} />
       <Image
         source={lightState ? landingBannerDark : landingBannerLight}
         resizeMode="contain"
@@ -115,7 +117,11 @@ export default function Landing() {
         //when button is pressed, the handleUser function will change the use state from null -> {}. Go to RootStack.js to see what happens to the use state which is being access from UserContext
         onPress={updateUser}
       >
-        <Text style={lightState ? stylesDark.buttonText : stylesLight.buttonText}>Enter</Text>
+        <Text
+          style={lightState ? stylesDark.buttonText : stylesLight.buttonText}
+        >
+          Enter
+        </Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

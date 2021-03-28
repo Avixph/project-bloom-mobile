@@ -14,35 +14,33 @@ const HomeStack = createStackNavigator();
 const SearchStack = createStackNavigator();
 const AboutStack = createStackNavigator();
 
-
-
 export const LandingStackScreen = () => {
- 
   const lightState = useLight();
   const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
-  
-  return  (<LandingStack.Navigator>
-    <LandingStack.Screen
-      name="Landing"
-      component={LandingScreen}
-      options={{
-        headerTitle: (props) => <Header {...props} />,
-        headerStyle: {
-          backgroundColor: lightDarkColor,
-          borderBottomColor: lightDarkColor,
-          borderBottomWidth: 1.5,
-        },
-        headerRight: () => <LightsOut />,
-      }}
-    />
-  </LandingStack.Navigator>
-  )
+
+  return (
+    <LandingStack.Navigator>
+      <LandingStack.Screen
+        name="Landing"
+        component={LandingScreen}
+        options={{
+          headerTitle: (props) => <Header {...props} />,
+          headerStyle: {
+            backgroundColor: lightDarkColor,
+            borderBottomColor: lightDarkColor,
+            borderBottomWidth: 0.004,
+          },
+          headerRight: () => <LightsOut />,
+        }}
+      />
+    </LandingStack.Navigator>
+  );
 };
 
 export const HomeStackScreen = () => {
   const lightState = useLight();
   const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
-  
+
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
@@ -72,13 +70,13 @@ export const HomeStackScreen = () => {
         }}
       />
     </HomeStack.Navigator>
-  )
+  );
 };
 
 export const SearchStackScreen = () => {
   const lightState = useLight();
-  const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
-  
+  const lightDarkColor = lightState ? "#240046" : "#d9bbf2";
+
   return (
     <SearchStack.Navigator>
       <SearchStack.Screen
@@ -108,13 +106,13 @@ export const SearchStackScreen = () => {
         }}
       />
     </SearchStack.Navigator>
-  )
+  );
 };
 
 export const AboutStackScreen = () => {
   const lightState = useLight();
   const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
-  
+
   return (
     <AboutStack.Navigator>
       <AboutStack.Screen
@@ -131,5 +129,5 @@ export const AboutStackScreen = () => {
         }}
       />
     </AboutStack.Navigator>
-  )
+  );
 };

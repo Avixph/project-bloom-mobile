@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { useLight } from "../contexts/HandleLightsOut";
 
-
 const noImage = require("../images/logos/no-image-logo.png");
 
 const stylesLight = StyleSheet.create({
@@ -33,7 +32,7 @@ const stylesDark = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#250246",  
+    backgroundColor: "#250246",
   },
   text: {
     color: "#e5e5e5",
@@ -46,7 +45,7 @@ const stylesDark = StyleSheet.create({
 
 export default function JobPost(props) {
   const lightState = useLight();
-  
+
   const companyLogo = props.company_logo_url
     ? { uri: `${props.company_logo_url}` }
     : noImage;
@@ -66,12 +65,23 @@ export default function JobPost(props) {
   };
 
   return (
-    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
+    <SafeAreaView
+      style={lightState ? stylesDark.container : stylesLight.container}
+    >
       <TouchableOpacity onPress={showDetails}>
-        <Image source={companyLogo} style={ lightState ? stylesDark.companyLogo : stylesLight.companyLogo} />
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>{props.title}</Text>
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>{props.company_name}</Text>
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>{props.category}</Text>
+        <Image
+          source={companyLogo}
+          style={lightState ? stylesDark.companyLogo : stylesLight.companyLogo}
+        />
+        <Text style={lightState ? stylesDark.text : stylesLight.text}>
+          {props.title}
+        </Text>
+        <Text style={lightState ? stylesDark.text : stylesLight.text}>
+          {props.company_name}
+        </Text>
+        <Text style={lightState ? stylesDark.text : stylesLight.text}>
+          {props.category}
+        </Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

@@ -1,11 +1,14 @@
 import React from "react";
 import * as WebBrowser from "expo-web-browser";
+import { StatsBar } from "react-native";
 import { WebView } from "react-native-webview";
+import { useLight } from "../contexts/HandleLightsOut";
 
 const noImage = require("../images/logos/no-image-logo.png");
 
 import {
   StyleSheet,
+  StatusBar,
   SafeAreaView,
   View,
   TouchableOpacity,
@@ -33,15 +36,18 @@ const styles = StyleSheet.create({
 });
 
 export default function JobDescription({ route: { params } }) {
-
   const companyLogo = params.logo ? { uri: `${params.logo}` } : noImage;
 
   const openLink = () => {
     WebBrowser.openBrowserAsync(params.apply);
   };
 
+  const lightState = useLight();
+  const lightDarkStatusColor = lightState ? "light-content" : "default";
+
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={lightDarkStatusColor} />
       <View>
         <Image source={companyLogo} style={styles.companyLogo} />
         <Text>{params.title}</Text>

@@ -14,7 +14,6 @@ import { fetchRandom } from "../redux/randomJobSlice";
 import JobPost from "./JobPost";
 import { useLight } from "../contexts/HandleLightsOut";
 
-
 const homeBannerLight = require("../images/design_elements/project-bloom-home-banner-light.png");
 
 const homeBannerDark = require("../images/design_elements/project-bloom-home-banner-dark.png");
@@ -70,7 +69,6 @@ export default function RandomJobList({ navigate }) {
 
   const lightState = useLight();
 
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -88,8 +86,12 @@ export default function RandomJobList({ navigate }) {
   };
 
   return (
-    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
-      <ScrollView style={lightState ? stylesDark.scrollView : stylesLight.scrollView}>
+    <SafeAreaView
+      style={lightState ? stylesDark.container : stylesLight.container}
+    >
+      <ScrollView
+        style={lightState ? stylesDark.scrollView : stylesLight.scrollView}
+      >
         <View></View>
         <Text>Welcome</Text>
         <Image
@@ -98,7 +100,10 @@ export default function RandomJobList({ navigate }) {
           style={lightState ? stylesDark.bannerImage : stylesLight.bannerImage}
         />
         <Text>Remote Jobs available</Text>
-        <TouchableOpacity style={lightState ? stylesDark.button : stylesLight.button} onPress={handleReload}>
+        <TouchableOpacity
+          style={lightState ? stylesDark.button : stylesLight.button}
+          onPress={handleReload}
+        >
           <Text>reload</Text>
         </TouchableOpacity>
         <View>{renderRandomList()}</View>
