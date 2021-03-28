@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import {
   StyleSheet,
   SafeAreaView,
   View,
-  FlatList,
-  Image,
-  Text,
+  ScrollView,
 } from "react-native";
+import JobPost from "./JobPost";
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -27,42 +28,23 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function SearchJobList() {
+export default function SearchJobList({ navigate }) {
+  
   const jobsRequest = useSelector((state) => state.searches.searchJobs);
-  const status = useSelector((state) => state.searches.status);
 
-  console.log(jobsRequest.company_name);
+  const renderSearchList = () => {
+    return jobsRequest.map((jobInfo, index) => {
+      return <JobPost {...jobInfo} navigate={navigate} key={index} />;
+    });
+  }
 
-  console.log(jobsRequest.company_name);
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <FlatList
-          data={jobsRequest}
-          style={styles.flatList}
-          renderItem={({ item }) => (
-            <View>
-              <Image
-                style={styles.companyLogo}
-                source={{ uri: `${item.company_logo_url}` }}
-              />
-              <Text>{item.title}</Text>
-              <Text>{item.company_name}</Text>
-            </View>
-          )}
-        />
-
-        {/* {jobsRequest.map((item, index) => {
-          return (
-            <View key={index}>
-            <Image
-                source={{uri: `${item.company_logo_url}`}}
-              />
-              <Text>{item.title}</Text>
-              <Text>{item.company_name}</Text>
-            </View>
-          )
-        })} */}
+        <ScrollView style={styles.scrollView}>
+          <View>{renderSearchList()}</View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
