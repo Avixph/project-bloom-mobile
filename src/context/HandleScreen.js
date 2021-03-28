@@ -1,6 +1,6 @@
 import React, { useState, useContext, createContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
-
+//just checking I'm connected 
 const UserContext = createContext();
 const UserUpdate = createContext();
 export const useUser = () => {
