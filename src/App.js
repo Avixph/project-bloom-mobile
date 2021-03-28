@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import RootStackScreen from "./navigations/RootStack";
-import { UserProvider } from "./HandleScreen";
+import { UserProvider } from "./context/HandleScreen";
 
 export default function App() {
   return (

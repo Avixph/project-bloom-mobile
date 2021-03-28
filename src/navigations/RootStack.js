@@ -5,7 +5,7 @@ import BottomTab from "./BottomTab";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
 import LightsOut from "../components/LightsOut";
-import { useUser, UserUpdate } from "../HandleScreen";
+import { useUser, UserUpdate } from "../context/HandleScreen";
 
 const RootStack = createStackNavigator();
 

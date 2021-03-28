@@ -7,7 +7,7 @@ import {
   Text,
   Image,
 } from "react-native";
-import { useUser, useUpdate } from "../HandleScreen";
+import { useUser, useUpdate } from "../context/HandleScreen";
 
 const landingBannerLight = require("../images/design_elements/project-bloom-landing-banner-light.png");
 
