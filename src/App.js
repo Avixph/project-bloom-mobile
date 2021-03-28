@@ -7,6 +7,7 @@ import RootStackScreen from "./navigations/RootStack";
 import { UserProvider } from "./contexts/HandleScreen";
 import { LightProvider } from "./contexts/HandleLightsOut"
 
+
 export default function App() {
   return (
     <Provider store={store}>
