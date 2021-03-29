@@ -1,7 +1,5 @@
 import React, { useState, useContext, createContext } from "react";
 
-
-
 //We're creating two object contexts;
 const UserContext = createContext();
 const UserUpdate = createContext();
@@ -15,7 +13,6 @@ export const useUser = () => {
 export const useUpdate = () => {
   return useContext(UserUpdate);
 };
-
 
 export const UserProvider = (props) => {
   

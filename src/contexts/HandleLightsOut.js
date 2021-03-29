@@ -1,8 +1,5 @@
 import React, { useState, useContext, createContext } from "react";
 
-
-
-
 const LightContext = createContext();
 const UpdateLight = createContext();
 
@@ -14,7 +11,6 @@ export const useUpdateLight = () => {
   return useContext(UpdateLight);
 }
 
-
 export const LightProvider = (props) => {
 
   const [light, setLight] = useState(false);
@@ -25,7 +21,6 @@ export const LightProvider = (props) => {
       setLight(false)
     }
   }
-
 
   return (
     <LightContext.Provider value={light}>
