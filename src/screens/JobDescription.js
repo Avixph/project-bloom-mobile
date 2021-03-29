@@ -24,14 +24,25 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
   },
-  companyLogo: {
-    width: 100,
-    height: 100,
+  jobDescriptionParent: {
+    flex: 1,
+    // marginTop: "1%",
+    paddingHorizontal: "5%",
+    paddingVertical: "5%",
+    borderRadius: 10,
+    width: 360,
+    backgroundColor: "#ffd085",
   },
-  scrollView: {
-    backgroundColor: "pink",
-    // marginTop: -25,
-    width: 385,
+  companyLogo: {
+    width: 128,
+    height: 128,
+    borderRadius:20,
+  },
+  descriptionView: {
+    flex: 1,
+    marginTop: "1%",
+    width: "100%",
+    fontSize: 1000,
   },
 });
 
@@ -48,7 +59,7 @@ export default function JobDescription({ route: { params } }) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={lightDarkStatusColor} />
-      <View>
+      <View style={styles.jobDescriptionParent}>
         <Image source={companyLogo} style={styles.companyLogo} />
         <Text>{params.title}</Text>
         <Text>{params.company}</Text>
@@ -57,13 +68,13 @@ export default function JobDescription({ route: { params } }) {
           <Text>Hiring: {params.requirements}</Text>
           <Text>Job Hours: {params.hours}</Text>
         </View>
-        <ScrollView style={styles.scrollView}>
-          <WebView
-            originWhitelist={["*"]}
-            source={{ html: `${params.description}` }}
-          />
-        </ScrollView>
 
+        <WebView
+          originWhitelist={["*"]}
+          source={{ html: `${params.description}` }}
+          style={styles.descriptionView}
+          textZoom={100}
+        />
         <TouchableOpacity onPress={openLink}>
           <Text>Apply</Text>
         </TouchableOpacity>

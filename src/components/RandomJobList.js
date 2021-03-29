@@ -92,8 +92,6 @@ export default function RandomJobList({ navigate }) {
       <ScrollView
         style={lightState ? stylesDark.scrollView : stylesLight.scrollView}
       >
-        <View></View>
-        <Text>Welcome</Text>
         <Image
           source={lightState ? homeBannerDark : homeBannerLight}
           resizeMode="contain"
