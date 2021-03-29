@@ -70,7 +70,7 @@ export default function SearchField() {
     <SafeAreaView
       style={lightState ? stylesDark.container : stylesLight.container}
     >
-      <Text style={lightState ? stylesDark.text : stylesLight.text}>Home</Text>
+      {/* <Text style={lightState ? stylesDark.text : stylesLight.text}>Home</Text> */}
       <TextInput
         style={lightState ? stylesDark.input : stylesLight.input}
         placeholder="search for jobs"

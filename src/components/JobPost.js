@@ -24,6 +24,7 @@ const stylesLight = StyleSheet.create({
   companyLogo: {
     width: 128,
     height: 128,
+    borderRadius: 20,
   },
 });
 
@@ -40,6 +41,7 @@ const stylesDark = StyleSheet.create({
   companyLogo: {
     width: 128,
     height: 128,
+    borderRadius: 20,
   },
 });
 
