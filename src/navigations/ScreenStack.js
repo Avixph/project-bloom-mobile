@@ -40,6 +40,7 @@ export const LandingStackScreen = () => {
 export const HomeStackScreen = () => {
   const lightState = useLight();
   const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
+  const lightDarkText = lightState ? "#e5e5e5" : "#000000";
 
   return (
     <HomeStack.Navigator>
@@ -61,11 +62,13 @@ export const HomeStackScreen = () => {
         component={JobDescriptionScreen}
         options={{
           // tabBarVisible: false,
+          title: 'Details',
           headerStyle: {
             backgroundColor: lightDarkColor,
             borderBottomColor: lightDarkColor,
             borderBottomWidth: 1.5,
           },
+          headerTintColor: lightDarkText,
           headerRight: () => <LightsOut />,
         }}
       />

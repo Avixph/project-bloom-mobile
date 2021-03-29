@@ -17,12 +17,36 @@ import {
   Image,
 } from "react-native";
 
-const styles = StyleSheet.create({
+const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
+  },
+  text: {
+    color: "#000000",
+  },
+  companyLogo: {
+    width: 100,
+    height: 100,
+  },
+  scrollView: {
+    backgroundColor: "pink",
+    // marginTop: -25,
+    width: 385,
+  },
+});
+
+const stylesDark = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#250246",
+  },
+  text: {
+    color: "#e5e5e5",
   },
   companyLogo: {
     width: 100,
@@ -46,18 +70,18 @@ export default function JobDescription({ route: { params } }) {
   const lightDarkStatusColor = lightState ? "light-content" : "default";
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
       <StatusBar barStyle={lightDarkStatusColor} />
       <View>
-        <Image source={companyLogo} style={styles.companyLogo} />
-        <Text>{params.title}</Text>
-        <Text>{params.company}</Text>
+        <Image source={companyLogo} style={lightState ? stylesDark.companyLogo : stylesLight.companyLogo} />
+        <Text style={lightState ? stylesDark.text : stylesLight.text}>{params.title}</Text>
+        <Text style={lightState ? stylesDark.text : stylesLight.text}>{params.company}</Text>
         <View>
-          <Text>Category: {params.catergory}</Text>
-          <Text>Hiring: {params.requirements}</Text>
-          <Text>Job Hours: {params.hours}</Text>
+          <Text style={lightState ? stylesDark.text : stylesLight.text}>Category: {params.catergory}</Text>
+          <Text style={lightState ? stylesDark.text : stylesLight.text}>Hiring: {params.requirements}</Text>
+          <Text style={lightState ? stylesDark.text : stylesLight.text}>Job Hours: {params.hours}</Text>
         </View>
-        <ScrollView style={styles.scrollView}>
+        <ScrollView style={lightState ? stylesDark.scrollView : stylesLight.scrollView}>
           <WebView
             originWhitelist={["*"]}
             source={{ html: `${params.description}` }}
@@ -65,7 +89,7 @@ export default function JobDescription({ route: { params } }) {
         </ScrollView>
 
         <TouchableOpacity onPress={openLink}>
-          <Text>Apply</Text>
+          <Text style={lightState ? stylesDark.text : stylesLight.text}>Apply</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
