@@ -1,5 +1,6 @@
 import React from "react";
 // import { useState, useEffect } from "react";
+
 import {
   StyleSheet,
   SafeAreaView,
@@ -7,8 +8,8 @@ import {
   Button,
   Text,
 } from "react-native";
-import { useLight } from "../contexts/HandleLightsOut";
 
+import { useLight } from "../contexts/HandleLightsOut";
 
 
 const stylesLight = StyleSheet.create({
