@@ -1,21 +1,11 @@
 import React from "react";
-import {
-  StyleSheet,
-  StatusBar,
-  View,
-  SafeAreaView,
-  // FlatList,
-  ScrollView,
-  Text,
-  Image,
-} from "react-native";
+import { StyleSheet, StatusBar, SafeAreaView } from "react-native";
 import RandomJobList from "../components/RandomJobList";
 import { useLight } from "../contexts/HandleLightsOut";
 
 const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
-    width: "99.53%",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
@@ -28,13 +18,9 @@ const stylesLight = StyleSheet.create({
 const stylesDark = StyleSheet.create({
   container: {
     flex: 1,
-    width: "99.53%",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#250246",
-  },
-  randomJobs: {
-    width: "99.53%",
+    backgroundColor: "#240046",
   },
 });
 
