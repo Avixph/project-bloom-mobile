@@ -56,7 +56,7 @@ const stylesDark = StyleSheet.create({
     borderRadius: 20,
     marginHorizontal: "8%",
     marginBottom: "10%",
-    padding: 10,
+    padding: "20%",
     height: 280
   },
   jobTitle: {
