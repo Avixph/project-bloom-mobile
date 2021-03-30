@@ -25,8 +25,7 @@ const stylesLight = StyleSheet.create({
   jobDescriptionParent: {
     flex: 1,
     marginVertical: "5%",
-    paddingHorizontal: "5%",
-    paddingVertical: "5%",
+    padding: "5%",
     borderRadius: 20,
     width: 360,
     backgroundColor: "#ffd085",
@@ -42,15 +41,15 @@ const stylesLight = StyleSheet.create({
   },
   jobTitle: {
     color: "#240046",
-    fontSize: 34,
+    fontSize: 30,
     fontWeight: "bold",
     marginHorizontal: "1%",
     marginBottom: "2%",
     textAlign: "center",
   },
-  jobCompany: {
+  companyName: {
     color: "#7a559a",
-    fontSize: 28,
+    fontSize: 26,
     marginHorizontal: "1%",
     textAlign: "center",
     marginBottom: "2%",
@@ -67,7 +66,7 @@ const stylesLight = StyleSheet.create({
     fontWeight: "bold",
     justifyContent: "center",
     textAlign: "center",
-    marginBottom: "2%",
+    marginBottom: "1.5%",
   },
   descriptionView: {
     flex: 1,
@@ -103,8 +102,7 @@ const stylesDark = StyleSheet.create({
   jobDescriptionParent: {
     flex: 1,
     marginVertical: "5%",
-    paddingHorizontal: "5%",
-    paddingVertical: "5%",
+    padding: "5%",
     borderRadius: 20,
     width: 360,
     backgroundColor: "#e5e5e5",
@@ -119,15 +117,15 @@ const stylesDark = StyleSheet.create({
   },
   jobTitle: {
     color: "#240046",
-    fontSize: 34,
+    fontSize: 30,
     fontWeight: "bold",
     marginHorizontal: "1%",
     marginBottom: "2%",
     textAlign: "center",
   },
-  jobCompany: {
+  companyName: {
     color: "#7a559a",
-    fontSize: 28,
+    fontSize: 26,
     marginHorizontal: "1%",
     marginBottom: "2%",
     textAlign: "center",
@@ -144,7 +142,7 @@ const stylesDark = StyleSheet.create({
     fontWeight: "bold",
     justifyContent: "center",
     textAlign: "center",
-    marginBottom: "2%",
+    marginBottom: "1.5%",
   },
   descriptionView: {
     flex: 1,
@@ -202,7 +200,7 @@ export default function JobDescription({ route: { params } }) {
           {params.title}
         </Text>
         <Text
-          style={lightState ? stylesDark.jobCompany : stylesLight.jobCompany}
+          style={lightState ? stylesDark.companyName : stylesLight.companyName}
         >
           {params.company}
         </Text>
@@ -238,7 +236,7 @@ export default function JobDescription({ route: { params } }) {
               ? stylesDark.descriptionView
               : stylesLight.descriptionView
           }
-          customStyle={`* {font-size: 20px; font-family: 'Roboto';}`}
+          customStyle={`* {font-size: 18px; font-family: 'Roboto';}`}
           scalesPageToFit={true}
           viewportContent={"width=device-width, user-scalable=no"}
           showsVerticalScrollIndicator={true}
