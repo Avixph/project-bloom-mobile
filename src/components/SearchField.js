@@ -10,7 +10,6 @@ import {
 import { fetchSearch } from "../redux/searchJobSlice";
 import { useLight } from "../contexts/HandleLightsOut";
 
-
 const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
@@ -68,8 +67,10 @@ export default function SearchField() {
   }
 
   return (
-    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
-      <Text style={lightState ? stylesDark.text : stylesLight.text}>Home</Text>
+    <SafeAreaView
+      style={lightState ? stylesDark.container : stylesLight.container}
+    >
+      {/* <Text style={lightState ? stylesDark.text : stylesLight.text}>Home</Text> */}
       <TextInput
         style={lightState ? stylesDark.input : stylesLight.input}
         placeholder="search for jobs"
@@ -77,7 +78,9 @@ export default function SearchField() {
         onChangeText={(val) => setSearch(val)}
       />
       <TouchableOpacity onPress={handleSearch}>
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>Search</Text>
+        <Text style={lightState ? stylesDark.text : stylesLight.text}>
+          Search
+        </Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

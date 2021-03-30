@@ -5,22 +5,21 @@ const UpdateLight = createContext();
 
 export const useLight = () => {
   return useContext(LightContext);
-}
+};
 
 export const useUpdateLight = () => {
   return useContext(UpdateLight);
-}
+};
 
 export const LightProvider = (props) => {
-
   const [light, setLight] = useState(false);
   const handleLight = () => {
     if (light === false) {
-      setLight(true)
+      setLight(true);
     } else {
-      setLight(false)
+      setLight(false);
     }
-  }
+  };
 
   return (
     <LightContext.Provider value={light}>
@@ -28,5 +27,5 @@ export const LightProvider = (props) => {
         {props.children}
       </UpdateLight.Provider>
     </LightContext.Provider>
-  )
-}
+  );
+};
