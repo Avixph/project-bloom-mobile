@@ -9,21 +9,18 @@ import { useUser } from "../contexts/HandleScreen"; //this is how we're getting 
 
 const RootStack = createStackNavigator();
 
-
 export default function RootStackScreen() {
   const [loading, setLoading] = useState(true);
 
-  useEffect(
-    () => {
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000)
-    }
-  , [])
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
 
   //the RootStack child component is getting the null value from UserContext context component
   const user = useUser();
-  console.log(user)
+  console.log(user);
 
   return (
     <RootStack.Navigator>
@@ -55,24 +52,6 @@ export default function RootStackScreen() {
           }}
         />
       )}
-
-      {/* {userToken ? (
-        <RootStack.Screen
-          name="mainApp"
-          component={BottomTab}
-          options={{
-            animationEnabled: false,
-          }}
-        />
-      ) : (
-        <RootStack.Screen
-          name="enterance"
-          component={Landing}
-          options={{
-            animationEnabled: false,
-          }}
-        />
-      )} */}
     </RootStack.Navigator>
   );
 }

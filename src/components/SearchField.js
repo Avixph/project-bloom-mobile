@@ -16,6 +16,8 @@ const stylesLight = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
+    marginTop: "-15%",
+    marginBottom: "-10%",
   },
   // separator: {
   //   marginVertical: 8,
@@ -26,9 +28,18 @@ const stylesLight = StyleSheet.create({
     color: "#000000",
   },
   input: {
-    height: 40,
+    height: 55,
     margin: 12,
     borderWidth: 1,
+    color: "#000000",
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    borderColor: "#ffd085",
+    borderWidth: 2,
+    textAlign: 'center',
+    width: 328,
+    fontSize: 20,
+
   },
 });
 
@@ -38,6 +49,8 @@ const stylesDark = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#250246",
+    marginTop: "-15%",
+    marginBottom: "-10%",
   },
   // separator: {
   //   marginVertical: 8,
@@ -48,10 +61,17 @@ const stylesDark = StyleSheet.create({
     color: "#e5e5e5",
   },
   input: {
-    height: 40,
+    height: 55,
     margin: 12,
     borderWidth: 1,
-    color: "#e5e5e5",
+    color: "#000000",
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    borderColor: "#e5e5e5",
+    borderWidth: 2,
+    textAlign: 'center',
+    width: 328,
+    fontSize: 20,
   },
 });
 
@@ -76,12 +96,8 @@ export default function SearchField() {
         placeholder="search for jobs"
         keyboardType="default"
         onChangeText={(val) => setSearch(val)}
+        onSubmitEditing={() => handleSearch() }
       />
-      <TouchableOpacity onPress={handleSearch}>
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>
-          Search
-        </Text>
-      </TouchableOpacity>
     </SafeAreaView>
   );
 }

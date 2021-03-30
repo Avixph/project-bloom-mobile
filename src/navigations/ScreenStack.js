@@ -62,7 +62,7 @@ export const HomeStackScreen = () => {
         component={JobDescriptionScreen}
         options={{
           // tabBarVisible: false,
-          title: 'Details',
+          title: "Details",
           headerStyle: {
             backgroundColor: lightDarkColor,
             borderBottomColor: lightDarkColor,

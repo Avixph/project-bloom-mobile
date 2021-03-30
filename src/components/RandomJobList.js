@@ -26,16 +26,10 @@ const stylesLight = StyleSheet.create({
     backgroundColor: "#d9bbf2",
     paddingTop: StatusBar.currentHeight,
   },
-  scrollView: {
-    backgroundColor: "pink",
-    // marginTop: -25,
-    width: 385,
-  },
   bannerImage: {
     flex: 1,
     marginHorizontal: 40,
-    marginTop: -200,
-    marginBottom: -200,
+    marginVertical: "-70%",
     width: "80%",
   },
 });
@@ -48,16 +42,10 @@ const stylesDark = StyleSheet.create({
     backgroundColor: "#250246",
     paddingTop: StatusBar.currentHeight,
   },
-  scrollView: {
-    backgroundColor: "pink",
-    // marginTop: -25,
-    width: 385,
-  },
   bannerImage: {
     flex: 1,
     marginHorizontal: 40,
-    marginTop: -200,
-    marginBottom: -200,
+    marginVertical: "-70%",
     width: "80%",
   },
 });
