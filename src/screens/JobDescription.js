@@ -6,13 +6,11 @@ import { useLight } from "../contexts/HandleLightsOut";
 const noImage = require("../images/logos/no-image-logo.png");
 
 import {
-  Dimensions,
   StyleSheet,
   StatusBar,
   SafeAreaView,
   View,
   TouchableOpacity,
-  ScrollView,
   Text,
   Image,
 } from "react-native";
@@ -26,10 +24,10 @@ const stylesLight = StyleSheet.create({
   },
   jobDescriptionParent: {
     flex: 1,
-    // marginTop: "1%",
+    marginVertical: "5%",
     paddingHorizontal: "5%",
     paddingVertical: "5%",
-    borderRadius: 10,
+    borderRadius: 20,
     width: 360,
     backgroundColor: "#ffd085",
   },
@@ -65,7 +63,7 @@ const stylesLight = StyleSheet.create({
   },
   jobItemText: {
     color: "#121212",
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     justifyContent: "center",
     textAlign: "center",
@@ -73,7 +71,7 @@ const stylesLight = StyleSheet.create({
   },
   descriptionView: {
     flex: 1,
-    marginTop: "1%",
+    marginVertical: "1%",
     width: "100%",
     justifyContent: "center",
   },
@@ -85,7 +83,6 @@ const stylesLight = StyleSheet.create({
     justifyContent: "center",
     marginHorizontal: "15%",
     marginTop: "2%",
-    marginBottom: "-4%",
   },
   applyButtonText: {
     color: "#ffd085",
@@ -105,10 +102,10 @@ const stylesDark = StyleSheet.create({
   },
   jobDescriptionParent: {
     flex: 1,
-    // marginTop: "1%",
+    marginVertical: "5%",
     paddingHorizontal: "5%",
     paddingVertical: "5%",
-    borderRadius: 10,
+    borderRadius: 20,
     width: 360,
     backgroundColor: "#e5e5e5",
   },
@@ -143,7 +140,7 @@ const stylesDark = StyleSheet.create({
   },
   jobItemText: {
     color: "#121212",
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     justifyContent: "center",
     textAlign: "center",
@@ -164,7 +161,6 @@ const stylesDark = StyleSheet.create({
     justifyContent: "center",
     marginHorizontal: "15%",
     marginTop: "2%",
-    marginBottom: "-4%",
   },
   applyButtonText: {
     color: "#240046",
