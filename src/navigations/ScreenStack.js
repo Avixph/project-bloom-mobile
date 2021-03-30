@@ -37,7 +37,12 @@ export const LandingStackScreen = () => {
   );
 };
 
-export const HomeStackScreen = () => {
+export const HomeStackScreen = ({ navigation, route }) => {
+  if (route.state && route.state.routes[route.state.index].name === "Details") {
+    navigation.setOptions({ tabBarVisible: false });
+  } else {
+    navigation.setOptions({ tabBarVisible: true });
+  }
   const lightState = useLight();
   const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
   const lightDarkText = lightState ? "#e5e5e5" : "#000000";
@@ -62,7 +67,7 @@ export const HomeStackScreen = () => {
         component={JobDescriptionScreen}
         options={{
           // tabBarVisible: false,
-          title: 'Details',
+          title: "Details",
           headerStyle: {
             backgroundColor: lightDarkColor,
             borderBottomColor: lightDarkColor,
@@ -76,7 +81,13 @@ export const HomeStackScreen = () => {
   );
 };
 
-export const SearchStackScreen = () => {
+export const SearchStackScreen = ({ navigation, route }) => {
+  if (route.state && route.state.routes[route.state.index].name === "Details") {
+    navigation.setOptions({ tabBarVisible: false });
+  } else {
+    navigation.setOptions({ tabBarVisible: true });
+  }
+
   const lightState = useLight();
   const lightDarkColor = lightState ? "#240046" : "#d9bbf2";
 
