@@ -64,7 +64,7 @@ const stylesDark = StyleSheet.create({
     height: 50,
     margin: 12,
     borderWidth: 1,
-    color: "#e5e5e5",
+    color: "#000000",
     backgroundColor: "#ffffff",
     borderRadius: 10,
     borderColor: "#e5e5e5",

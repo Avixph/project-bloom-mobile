@@ -16,9 +16,19 @@ const stylesLight = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#d9bbf2",
+    backgroundColor: "#ffd085",
+    borderRadius: 10,
+    marginLeft: "5%",
+    marginRight: "5%",
+    marginBottom: "5%",
+    padding: 10,
+    height: 280,
   },
-  text: {
+  jobTitle: {
+    color: "#000000",
+    fontWeight: "bold",
+  },
+  companyName: {
     color: "#000000",
   },
   companyLogo: {
@@ -37,10 +47,20 @@ const stylesDark = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#250246",
+    backgroundColor: "#e5e5e5",
+    borderRadius: 10,
+    marginLeft: "5%",
+    marginRight: "5%",
+    marginBottom: "5%",
+    padding: 10,
+    height: 280
   },
-  text: {
-    color: "#e5e5e5",
+  jobTitle: {
+    color: "#000000",
+    fontWeight: "bold",
+  },
+  companyName: {
+    color: "#000000",
   },
   companyLogo: {
     width: 128,
@@ -82,10 +102,10 @@ export default function JobPost(props) {
           source={companyLogo}
           style={lightState ? stylesDark.companyLogo : stylesLight.companyLogo}
         />
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>
+        <Text style={lightState ? stylesDark.jobTitle : stylesLight.jobTitle}>
           {props.title}
         </Text>
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>
+        <Text style={lightState ? stylesDark.companyName : stylesLight.companyName}>
           {props.company_name}
         </Text>
         <Text style={lightState ? stylesDark.text : stylesLight.text}>
