@@ -28,7 +28,7 @@ const stylesLight = StyleSheet.create({
     color: "#000000",
   },
   input: {
-    height: 50,
+    height: 55,
     margin: 12,
     borderWidth: 1,
     color: "#000000",
@@ -37,7 +37,7 @@ const stylesLight = StyleSheet.create({
     borderColor: "#ffd085",
     borderWidth: 2,
     textAlign: 'center',
-    width: 250,
+    width: 328,
     fontSize: 20,
 
   },
@@ -61,16 +61,16 @@ const stylesDark = StyleSheet.create({
     color: "#e5e5e5",
   },
   input: {
-    height: 50,
+    height: 55,
     margin: 12,
     borderWidth: 1,
-    color: "#e5e5e5",
+    color: "#000000",
     backgroundColor: "#ffffff",
     borderRadius: 10,
     borderColor: "#e5e5e5",
     borderWidth: 2,
     textAlign: 'center',
-    width: 250,
+    width: 328,
     fontSize: 20,
   },
 });

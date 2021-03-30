@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { StyleSheet, SafeAreaView, View, ScrollView } from "react-native";
 import JobPost from "./JobPost";
+import { useLight } from "../contexts/HandleLightsOut";
 
-const styles = StyleSheet.create({
+const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
@@ -21,7 +22,27 @@ const styles = StyleSheet.create({
   },
 });
 
+const stylesDark = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#240046",
+  },
+  flatList: {
+    backgroundColor: "pink",
+    marginTop: -25,
+    width: "99.53%",
+  },
+  companyLogo: {
+    width: 128,
+    height: 128,
+  },
+});
+
 export default function SearchJobList({ navigate }) {
+  const lightState = useLight();
+
   const jobsRequest = useSelector((state) => state.searches.searchJobs);
 
   const renderSearchList = () => {
@@ -31,9 +52,9 @@ export default function SearchJobList({ navigate }) {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
       <View>
-        <ScrollView style={styles.scrollView}>
+        <ScrollView style={lightState ? stylesDark.scrollView : stylesLight.scrollView}>
           <View>{renderSearchList()}</View>
         </ScrollView>
       </View>

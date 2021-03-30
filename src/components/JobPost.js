@@ -16,10 +16,25 @@ const stylesLight = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#d9bbf2",
+    backgroundColor: "#ffd085",
+    borderRadius: 20,
+    marginHorizontal: "8%",
+    marginBottom: "10%",
+    padding: "20%",
+    height: 280,
   },
-  text: {
-    color: "#000000",
+  jobTitle: {
+    color: "#240046",
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 24,
+    marginBottom: "3%",
+    marginTop: "3%",
+  },
+  companyName: {
+    color: "#7a559a",
+    textAlign: "center",
+    fontSize: 20,
   },
   companyLogo: {
     width: 128,
@@ -37,10 +52,25 @@ const stylesDark = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#250246",
+    backgroundColor: "#e5e5e5",
+    borderRadius: 20,
+    marginHorizontal: "8%",
+    marginBottom: "10%",
+    padding: "20%",
+    height: 280
   },
-  text: {
-    color: "#e5e5e5",
+  jobTitle: {
+    color: "#240046",
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 24,
+    marginBottom: "3%",
+    marginTop: "3%",
+  },
+  companyName: {
+    color: "#7a559a",
+    textAlign: "center",
+    fontSize: 20,
   },
   companyLogo: {
     width: 128,
@@ -82,15 +112,15 @@ export default function JobPost(props) {
           source={companyLogo}
           style={lightState ? stylesDark.companyLogo : stylesLight.companyLogo}
         />
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>
+        <Text numberOfLines={1} style={lightState ? stylesDark.jobTitle : stylesLight.jobTitle}>
           {props.title}
         </Text>
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>
+        <Text style={lightState ? stylesDark.companyName : stylesLight.companyName}>
           {props.company_name}
         </Text>
-        <Text style={lightState ? stylesDark.text : stylesLight.text}>
+        {/* <Text style={lightState ? stylesDark.text : stylesLight.text}>
           {props.category}
-        </Text>
+        </Text> */}
       </TouchableOpacity>
     </SafeAreaView>
   );
