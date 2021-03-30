@@ -25,6 +25,10 @@ const stylesLight = StyleSheet.create({
     width: 128,
     height: 128,
     borderRadius: 20,
+    marginHorizontal: "30%",
+    borderColor: "#aa88c6",
+    borderWidth: 1,
+    marginHorizontal: "30%",
   },
 });
 
@@ -42,6 +46,9 @@ const stylesDark = StyleSheet.create({
     width: 128,
     height: 128,
     borderRadius: 20,
+    borderColor: "#7a559a",
+    borderWidth: 1,
+    marginHorizontal: "30%",
   },
 });
 

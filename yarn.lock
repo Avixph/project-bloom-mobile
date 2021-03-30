@@ -10770,6 +10770,13 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
+react-native-autoheight-webview@^1.5.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/react-native-autoheight-webview/-/react-native-autoheight-webview-1.5.8.tgz#afcbe65dfefcce4e2088c9aff9fee23dcd18aadf"
+  integrity sha512-6+LY0a47AsnfnGgqMP2JzNVgX0/sGnkgq7UV39OKgUf2Im/glFjUOggYm8EiyzmA93gb9tYVB1mRTORElWAiGQ==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-native-gesture-handler@~1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.8.0.tgz#18f61f51da50320f938957b0ee79bc58f47449dc"
@@ -10835,10 +10842,10 @@ react-native-web@~0.13.12:
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
 
-react-native-webview@11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-11.0.0.tgz#d667cbcc772e963fe88a4156290d25fe47ed43b0"
-  integrity sha512-gzID5ebCFVNkxreuabClymo6QkJbXCLEtiIUY9QAhxY58HsDUp8x0YzDVEROYyEJ4ghL71koAOeQRDNAgNnh1w==
+react-native-webview@^11.3.2:
+  version "11.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-11.3.2.tgz#17155a69caf1910233ae3d606dce6caf57b0169c"
+  integrity sha512-j+0eUKYY3MCO7DRhZaIPY6+0q+Yo1Iyhz5f7cde+i5vR71CcJ/60DhZPw5SSqXZnZiVX0Myz1D46u8dtfRmQFg==
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
