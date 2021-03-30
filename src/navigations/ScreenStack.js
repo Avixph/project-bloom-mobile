@@ -37,12 +37,7 @@ export const LandingStackScreen = () => {
   );
 };
 
-export const HomeStackScreen = ({ navigation, route }) => {
-  if (route.state && route.state.routes[route.state.index].name === "Details") {
-    navigation.setOptions({ tabBarVisible: false });
-  } else {
-    navigation.setOptions({ tabBarVisible: true });
-  }
+export const HomeStackScreen = () => {
   const lightState = useLight();
   const lightDarkColor = lightState ? "#250246" : "#d9bbf2";
   const lightDarkText = lightState ? "#e5e5e5" : "#000000";
@@ -81,13 +76,7 @@ export const HomeStackScreen = ({ navigation, route }) => {
   );
 };
 
-export const SearchStackScreen = ({ navigation, route }) => {
-  if (route.state && route.state.routes[route.state.index].name === "Details") {
-    navigation.setOptions({ tabBarVisible: false });
-  } else {
-    navigation.setOptions({ tabBarVisible: true });
-  }
-
+export const SearchStackScreen = () => {
   const lightState = useLight();
   const lightDarkColor = lightState ? "#240046" : "#d9bbf2";
 
