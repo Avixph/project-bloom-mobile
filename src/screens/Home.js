@@ -8,7 +8,7 @@ const stylesLight = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#d9bbf2",
+    backgroundColor: "#d9bbf2", 
   },
   randomJobs: {
     width: "99.53%",

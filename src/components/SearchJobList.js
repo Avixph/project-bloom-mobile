@@ -20,6 +20,9 @@ const stylesLight = StyleSheet.create({
     width: 128,
     height: 128,
   },
+  scrollView: {
+    width: '75%',
+  }
 });
 
 const stylesDark = StyleSheet.create({
@@ -38,6 +41,9 @@ const stylesDark = StyleSheet.create({
     width: 128,
     height: 128,
   },
+  scrollView: {
+    width: '75%',
+  }
 });
 
 export default function SearchJobList({ navigate }) {
