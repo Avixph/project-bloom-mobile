@@ -22,7 +22,7 @@ const stylesLight = StyleSheet.create({
   },
   scrollView: {
 
-    width: '75%',
+    width: '95%',
   },
   loadMoreButton: {
     marginBottom: 200,
@@ -48,7 +48,7 @@ const stylesDark = StyleSheet.create({
   },
   scrollView: {
 
-    width: '75%',
+    width: '95%',
   },
   loadMoreButton: {
   }

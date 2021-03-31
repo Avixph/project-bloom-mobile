@@ -29,12 +29,11 @@ const stylesLight = StyleSheet.create({
   bannerImage: {
     flex: 1,
     marginHorizontal: "9%",
-    marginVertical: "-100%",
+    marginVertical: "-70%",
     width: "85%",
   },
   scrollView: {
-
-    width: '75%',
+    width: "95%",
   },
   jobTitle: {
     fontSize: 40,
@@ -43,22 +42,22 @@ const stylesLight = StyleSheet.create({
     textAlign: "center",
     marginBottom: 22,
   },
-  button: {
+  reloadButton: {
     backgroundColor: "#240046",
     borderRadius: 20,
-    width: "50%",
-    marginHorizontal: "25%",
+    width: "30%",
+    marginHorizontal: "35%",
   },
   reloadText: {
-    fontSize: 18,
+    fontSize: 35,
+    fontWeight: "bold",
     color: "#fad085",
     textAlign: "center",
-    padding: 20,
+    padding: 15,
   },
   jobList: {
     marginTop: 30,
-  }
-
+  },
 });
 
 const stylesDark = StyleSheet.create({
@@ -72,12 +71,11 @@ const stylesDark = StyleSheet.create({
   bannerImage: {
     flex: 1,
     marginHorizontal: "9%",
-    marginVertical: "-100%",
+    marginVertical: "-70%",
     width: "85%",
   },
   scrollView: {
-
-    width: '75%',
+    width: "95%",
   },
   jobTitle: {
     fontSize: 40,
@@ -86,21 +84,21 @@ const stylesDark = StyleSheet.create({
     textAlign: "center",
     marginBottom: 22,
   },
-  button: {
-    backgroundColor: "#d9bbf2",
+  reloadButton: {
+    backgroundColor: "#ffd085",
     borderRadius: 20,
-    width: "50%",
-    marginHorizontal: "25%",
+    width: "30%",
+    marginHorizontal: "35%",
   },
   reloadText: {
-    fontSize: 18,
-    color: "#121212",
+    fontSize: 35,
+    fontWeight: "bold",
+    color: "#240046",
     textAlign: "center",
-    padding: 20,
+    padding: 15,
   },
   jobList: {
     marginTop: 30,
-
   },
 });
 
@@ -139,14 +137,25 @@ export default function RandomJobList({ navigate }) {
           resizeMode="contain"
           style={lightState ? stylesDark.bannerImage : stylesLight.bannerImage}
         />
-        <Text style={lightState ? stylesDark.jobTitle : stylesLight.jobTitle}>Remote Jobs Available</Text>
+        <Text style={lightState ? stylesDark.jobTitle : stylesLight.jobTitle}>
+          Remote Jobs Available
+        </Text>
         <TouchableOpacity
-          style={lightState ? stylesDark.button : stylesLight.button}
+          style={
+            lightState ? stylesDark.reloadButton : stylesLight.reloadButton
+          }
+          accessibilityLabel="Reload"
           onPress={handleReload}
         >
-          <Text style={lightState ? stylesDark.reloadText : stylesLight.reloadText}>reload</Text>
+          <Text
+            style={lightState ? stylesDark.reloadText : stylesLight.reloadText}
+          >
+            ↺
+          </Text>
         </TouchableOpacity>
-        <View style={lightState ? stylesDark.jobList : stylesLight.jobList}>{renderRandomList()}</View>
+        <View style={lightState ? stylesDark.jobList : stylesLight.jobList}>
+          {renderRandomList()}
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

@@ -10,9 +10,6 @@ const stylesLight = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
   },
-  randomJobs: {
-    width: "99.53%",
-  },
 });
 
 const stylesDark = StyleSheet.create({
