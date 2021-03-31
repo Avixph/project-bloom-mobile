@@ -79,6 +79,7 @@ export const HomeStackScreen = () => {
 export const SearchStackScreen = () => {
   const lightState = useLight();
   const lightDarkColor = lightState ? "#240046" : "#d9bbf2";
+  const lightDarkText = lightState ? "#e5e5e5" : "#000000";
 
   return (
     <SearchStack.Navigator>
@@ -100,11 +101,13 @@ export const SearchStackScreen = () => {
         component={JobDescriptionScreen}
         options={{
           // tabBarVisible: false,
+          title: "Details",
           headerStyle: {
             backgroundColor: lightDarkColor,
             borderBottomColor: lightDarkColor,
             borderBottomWidth: 1.5,
           },
+          headerTintColor: lightDarkText,
           headerRight: () => <LightsOut />,
         }}
       />
