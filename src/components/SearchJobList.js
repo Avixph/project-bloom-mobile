@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { StyleSheet, SafeAreaView, View, ScrollView, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, SafeAreaView, View, ScrollView, TouchableOpacity, Text, Image } from "react-native";
 import JobPost from "./JobPost";
 import { useLight } from "../contexts/HandleLightsOut";
+
+const lightLoadingSpinner = require("../images/loading/spinner.gif");
+const darkLoadingSpinner = require("../images/loading/darkSpinner.gif");
 
 const stylesLight = StyleSheet.create({
   container: {
@@ -20,12 +23,20 @@ const stylesLight = StyleSheet.create({
     width: 128,
     height: 128,
   },
+  emptyFieldMessage: {
+    fontSize: 22,
+    textAlign: "center",
+    marginTop: "20%",
+    color: "#000000",
+  },
   scrollView: {
 
     width: '75%',
   },
-  loadMoreButton: {
-    marginBottom: 200,
+  spinner: {
+    flex: 1,
+    marginTop: 20,
+    width: 200,
   }
 
 });
@@ -46,11 +57,20 @@ const stylesDark = StyleSheet.create({
     width: 128,
     height: 128,
   },
+  emptyFieldMessage: {
+    fontSize: 22,
+    textAlign: "center",
+    marginTop: "20%",
+    color: "#e5e5e5",
+  },
   scrollView: {
 
     width: '75%',
   },
-  loadMoreButton: {
+  spinner: {
+    flex: 1,
+    marginTop: 20,
+    width: 200,
   }
 
 });
@@ -59,20 +79,26 @@ export default function SearchJobList({ navigate }) {
   const lightState = useLight();
 
   const jobsRequest = useSelector((state) => state.searches.searchJobs);
+  const status = useSelector((state) => state.searches.status);
 
-  const [nextJobPosts, setNextJobPosts] = useState(5);
-
-  const handleLoadMore = () => {
-    setNextJobPosts(nextJobPosts + 5);
-  };
-
-  const renderSearchList = () => {  
-      return jobsRequest.slice(0, nextJobPosts).map((jobInfo, index) => {
+  const renderSearchList = () => {
+    if (status === "loading") {
+      return <Image  
+      source = { lightState? darkLoadingSpinner: lightLoadingSpinner }
+      style={lightState ? stylesDark.spinner : stylesLight.spinner}
+      resizeMode="contain"
+      />
+    } else if (jobsRequest[0] === "Fill in search field") {
+      return <Text style={lightState ? stylesDark.emptyFieldMessage : stylesLight.emptyFieldMessage}>Complete search field.</Text>
+    } else if (status === "success") {
+      return jobsRequest.map((jobInfo, index) => {
         return <JobPost {...jobInfo} navigate={navigate} key={index} />;
       });
+    } else {
+      <Text>Error: Please Try Again!</Text>;
+    }
   };
 
-  const messageLoadMore = jobsRequest.length === 0 ? <Text>Complete search field.</Text> :  <Text>Load More</Text>
 
   return (
     <SafeAreaView
@@ -83,9 +109,6 @@ export default function SearchJobList({ navigate }) {
           style={lightState ? stylesDark.scrollView : stylesLight.scrollView}
         >
           <View>{renderSearchList()}</View>
-          <TouchableOpacity onPress={handleLoadMore} style={lightState ? stylesDark.loadMoreButton : stylesLight.loadMoreButton}>
-            { messageLoadMore}
-          </TouchableOpacity>
         </ScrollView>
       </View>
     </SafeAreaView>
