@@ -29,12 +29,36 @@ const stylesLight = StyleSheet.create({
   bannerImage: {
     flex: 1,
     marginHorizontal: "9%",
-    marginVertical: "-70%",
-    width: "80%",
+    marginVertical: "-100%",
+    width: "85%",
   },
   scrollView: {
-    width: "99.5%",
+
+    width: '75%',
   },
+  jobTitle: {
+    fontSize: 40,
+    color: "#240046",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 22,
+  },
+  button: {
+    backgroundColor: "#240046",
+    borderRadius: 20,
+    width: "50%",
+    marginHorizontal: "25%",
+  },
+  reloadText: {
+    fontSize: 18,
+    color: "#fad085",
+    textAlign: "center",
+    padding: 20,
+  },
+  jobList: {
+    marginTop: 30,
+  }
+
 });
 
 const stylesDark = StyleSheet.create({
@@ -48,11 +72,35 @@ const stylesDark = StyleSheet.create({
   bannerImage: {
     flex: 1,
     marginHorizontal: "9%",
-    marginVertical: "-70%",
-    width: "80%",
+    marginVertical: "-100%",
+    width: "85%",
   },
   scrollView: {
-    width: "99.5%",
+
+    width: '75%',
+  },
+  jobTitle: {
+    fontSize: 40,
+    color: "#e5e5e5",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 22,
+  },
+  button: {
+    backgroundColor: "#d9bbf2",
+    borderRadius: 20,
+    width: "50%",
+    marginHorizontal: "25%",
+  },
+  reloadText: {
+    fontSize: 18,
+    color: "#121212",
+    textAlign: "center",
+    padding: 20,
+  },
+  jobList: {
+    marginTop: 30,
+
   },
 });
 
@@ -91,14 +139,14 @@ export default function RandomJobList({ navigate }) {
           resizeMode="contain"
           style={lightState ? stylesDark.bannerImage : stylesLight.bannerImage}
         />
-        <Text>Remote Jobs available</Text>
+        <Text style={lightState ? stylesDark.jobTitle : stylesLight.jobTitle}>Remote Jobs Available</Text>
         <TouchableOpacity
           style={lightState ? stylesDark.button : stylesLight.button}
           onPress={handleReload}
         >
-          <Text>reload</Text>
+          <Text style={lightState ? stylesDark.reloadText : stylesLight.reloadText}>reload</Text>
         </TouchableOpacity>
-        <View>{renderRandomList()}</View>
+        <View style={lightState ? stylesDark.jobList : stylesLight.jobList}>{renderRandomList()}</View>
       </ScrollView>
     </SafeAreaView>
   );
