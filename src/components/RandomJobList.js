@@ -28,7 +28,7 @@ const stylesLight = StyleSheet.create({
   },
   bannerImage: {
     flex: 1,
-    marginHorizontal: 40,
+    marginHorizontal: "9%",
     marginVertical: "-70%",
     width: "80%",
   },
@@ -44,7 +44,7 @@ const stylesDark = StyleSheet.create({
   },
   bannerImage: {
     flex: 1,
-    marginHorizontal: 40,
+    marginHorizontal: "9%",
     marginVertical: "-70%",
     width: "80%",
   },
