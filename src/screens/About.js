@@ -7,11 +7,13 @@ import {
   StatusBar,
   Text,
   View,
+  ScrollView
 } from "react-native";
 
 import { useLight } from "../contexts/HandleLightsOut";
 import AboutTeam from "../components/AboutTeam";
 import { teamBloom } from "../services/team.json";
+
 
 const stylesLight = StyleSheet.create({
   container: {
@@ -20,7 +22,10 @@ const stylesLight = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
   },
-  text: {
+  aboutHeader: {
+    color: "#240046",
+  },
+  aboutText: {
     color: "#240046",
   },
 });
@@ -32,7 +37,10 @@ const stylesDark = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#250246",
   },
-  text: {
+  aboutHeader: {
+    color: "#e5e5e5",
+  },
+  aboutText: {
     color: "#e5e5e5",
   },
 });
@@ -50,8 +58,9 @@ export default function AboutScreen() {
       style={lightState ? stylesDark.container : stylesLight.container}
     >
       <StatusBar barStyle={lightDarkStatusColor} />
-      <Text style={lightState ? stylesDark.text : stylesLight.text}>About</Text>
-      <Text>
+      <Text style={lightState ? stylesDark.aboutHeader : stylesLight.aboutHeader}>About</Text>
+      <ScrollView> 
+      <Text style={lightState ? stylesDark.aboutText : stylesLight.aboutText}>
         The goal of bloom is to streamline the remote job
         searching process for remote workers. We will help decrease the amount
         of time it takes to find relevant roles for the skills one is proficient
@@ -59,6 +68,7 @@ export default function AboutScreen() {
       </Text>
       
     <View> {renderTeam()}</View>
+    </ ScrollView>
     </SafeAreaView>
   );
 }

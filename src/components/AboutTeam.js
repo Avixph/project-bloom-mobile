@@ -1,4 +1,5 @@
 import React from "react";
+import * as WebBrowser from "expo-web-browser";
 import {
   StyleSheet,
   TouchableOpacity,
@@ -21,9 +22,21 @@ const styles = StyleSheet.create({
 });
 
 export default function AboutTeam(props) {
+  const openGithub = () => {
+    WebBrowser.openBrowserAsync(props.links.github)
+  }
+  const openLinkedIn = () => {
+    WebBrowser.openBrowserAsync(props.links.linkedin)
+  }
+    
   return (
     <SafeAreaView style={styles.container}>
       <Image style={ styles.teamPic} source={{ uri: `${props.pic}` }} />
+      <Text>{props.name.first} {props.name.last}</Text>
+      <Text>{props.name.role}</Text>
+      <TouchableOpacity onPress={openGithub}><Text>Github</Text></TouchableOpacity>
+      <TouchableOpacity onPress={openLinkedIn}><Text>LinkedIn</Text></TouchableOpacity>
     </SafeAreaView>
+
   );
 }
