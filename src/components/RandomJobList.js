@@ -84,8 +84,10 @@ const stylesDark = StyleSheet.create({
     textAlign: "center",
     marginBottom: 22,
   },
+
   reloadButton: {
     backgroundColor: "#ffd085",
+
     borderRadius: 20,
     width: "30%",
     marginHorizontal: "35%",
