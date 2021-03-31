@@ -21,6 +21,7 @@ const stylesLight = StyleSheet.create({
     marginHorizontal: "8%",
     marginBottom: "10%",
     padding: "20%",
+    width: 300,
     height: 280,
   },
   jobTitle: {

@@ -7,6 +7,7 @@ import {
   Image,
 } from "react-native";
 
+
 //call object props here?
 
 const styles = StyleSheet.create({

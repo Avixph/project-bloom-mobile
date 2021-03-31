@@ -33,6 +33,7 @@ const stylesLight = StyleSheet.create({
     width: "85%",
   },
   scrollView: {
+
     width: '75%',
   },
   jobTitle: {
@@ -57,6 +58,7 @@ const stylesLight = StyleSheet.create({
   jobList: {
     marginTop: 30,
   }
+
 });
 
 const stylesDark = StyleSheet.create({
@@ -74,6 +76,7 @@ const stylesDark = StyleSheet.create({
     width: "85%",
   },
   scrollView: {
+
     width: '75%',
   },
   jobTitle: {
@@ -97,6 +100,7 @@ const stylesDark = StyleSheet.create({
   },
   jobList: {
     marginTop: 30,
+
   },
 });
 

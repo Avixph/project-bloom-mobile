@@ -21,11 +21,13 @@ const stylesLight = StyleSheet.create({
     height: 128,
   },
   scrollView: {
+
     width: '75%',
   },
   loadMoreButton: {
     marginBottom: 200,
   }
+
 });
 
 const stylesDark = StyleSheet.create({
@@ -45,10 +47,12 @@ const stylesDark = StyleSheet.create({
     height: 128,
   },
   scrollView: {
+
     width: '75%',
   },
   loadMoreButton: {
   }
+
 });
 
 export default function SearchJobList({ navigate }) {
@@ -71,9 +75,13 @@ export default function SearchJobList({ navigate }) {
   const messageLoadMore = jobsRequest.length === 0 ? <Text>Complete search field.</Text> :  <Text>Load More</Text>
 
   return (
-    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
+    <SafeAreaView
+      style={lightState ? stylesDark.container : stylesLight.container}
+    >
       <View>
-        <ScrollView style={lightState ? stylesDark.scrollView : stylesLight.scrollView}>
+        <ScrollView
+          style={lightState ? stylesDark.scrollView : stylesLight.scrollView}
+        >
           <View>{renderSearchList()}</View>
           <TouchableOpacity onPress={handleLoadMore} style={lightState ? stylesDark.loadMoreButton : stylesLight.loadMoreButton}>
             { messageLoadMore}
