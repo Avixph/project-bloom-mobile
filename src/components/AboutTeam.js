@@ -1,8 +1,6 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Text } from "react-native";
 
-const noImage = require("../images/logos/no-image-logo.png");
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

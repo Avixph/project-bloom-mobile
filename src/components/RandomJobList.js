@@ -33,8 +33,8 @@ const stylesLight = StyleSheet.create({
     width: "80%",
   },
   scrollView: {
-    width: '75%',
-  }
+    width: "99.5%",
+  },
 });
 
 const stylesDark = StyleSheet.create({
@@ -52,8 +52,8 @@ const stylesDark = StyleSheet.create({
     width: "80%",
   },
   scrollView: {
-    width: '75%',
-  }
+    width: "99.5%",
+  },
 });
 
 export default function RandomJobList({ navigate }) {

@@ -11,15 +11,6 @@ const stylesLight = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
   },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-  },
-  companyLogo: {
-    width: 100,
-    height: 100,
-  },
 });
 
 const stylesDark = StyleSheet.create({
@@ -28,15 +19,6 @@ const stylesDark = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#250246",
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-  },
-  companyLogo: {
-    width: 100,
-    height: 100,
   },
 });
 

@@ -21,8 +21,8 @@ const stylesLight = StyleSheet.create({
     height: 128,
   },
   scrollView: {
-    width: '75%',
-  }
+    width: "99.5%",
+  },
 });
 
 const stylesDark = StyleSheet.create({
@@ -42,8 +42,8 @@ const stylesDark = StyleSheet.create({
     height: 128,
   },
   scrollView: {
-    width: '75%',
-  }
+    width: "99.5%",
+  },
 });
 
 export default function SearchJobList({ navigate }) {
@@ -58,9 +58,13 @@ export default function SearchJobList({ navigate }) {
   };
 
   return (
-    <SafeAreaView style={lightState ? stylesDark.container : stylesLight.container}>
+    <SafeAreaView
+      style={lightState ? stylesDark.container : stylesLight.container}
+    >
       <View>
-        <ScrollView style={lightState ? stylesDark.scrollView : stylesLight.scrollView}>
+        <ScrollView
+          style={lightState ? stylesDark.scrollView : stylesLight.scrollView}
+        >
           <View>{renderSearchList()}</View>
         </ScrollView>
       </View>
