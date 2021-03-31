@@ -24,7 +24,10 @@ const stylesLight = StyleSheet.create({
     height: 128,
   },
   emptyFieldMessage: {
-
+    fontSize: 22,
+    textAlign: "center",
+    marginTop: "20%",
+    color: "#000000",
   },
   scrollView: {
     width: '75%',
@@ -53,7 +56,10 @@ const stylesDark = StyleSheet.create({
     height: 128,
   },
   emptyFieldMessage: {
-
+    fontSize: 22,
+    textAlign: "center",
+    marginTop: "20%",
+    color: "#e5e5e5",
   },
   scrollView: {
     width: '75%',
@@ -79,7 +85,7 @@ export default function SearchJobList({ navigate }) {
       resizeMode="contain"
       />
     } else if (jobsRequest[0] === "Fill in search field") {
-      return <Text style={lightState ? darkLoadingSpinner : lightLoadingSpinner}>Complete search field.</Text>
+      return <Text style={lightState ? stylesDark.emptyFieldMessage : stylesLight.emptyFieldMessage}>Complete search field.</Text>
     } else if (status === "success") {
       return jobsRequest.map((jobInfo, index) => {
         return <JobPost {...jobInfo} navigate={navigate} key={index} />;
