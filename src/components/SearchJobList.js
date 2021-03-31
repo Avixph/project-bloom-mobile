@@ -31,7 +31,7 @@ const stylesLight = StyleSheet.create({
   },
   scrollView: {
 
-    width: '75%',
+    width: '95%',
   },
   spinner: {
     flex: 1,
@@ -65,7 +65,7 @@ const stylesDark = StyleSheet.create({
   },
   scrollView: {
 
-    width: '75%',
+    width: '95%',
   },
   spinner: {
     flex: 1,
