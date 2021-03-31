@@ -87,14 +87,14 @@ const stylesDark = StyleSheet.create({
     marginBottom: 22,
   },
   button: {
-    backgroundColor: "#d9bbf2",
+    backgroundColor: "#fad085",
     borderRadius: 20,
     width: "50%",
     marginHorizontal: "25%",
   },
   reloadText: {
     fontSize: 18,
-    color: "#121212",
+    color: "#240046",
     textAlign: "center",
     padding: 20,
   },
