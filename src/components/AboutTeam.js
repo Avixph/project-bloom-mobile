@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
     
   },
   teamPic: { width: 120, height: 120 },
+  buttonLinkedIn: {},
+  buttonGithub: {},
+  textGithub:{},
+  textLinkedIn: {},
 });
 export default function AboutTeam(props) {
   const openGithub = () => {
@@ -39,11 +43,11 @@ export default function AboutTeam(props) {
         {props.name.first} {props.name.last}
       </Text>
       <Text>{props.name.role}</Text>
-      <TouchableOpacity onPress={openGithub}>
-        <Text>Github</Text>
+      <TouchableOpacity style={styles.buttonGithub} onPress={openGithub}>
+        <Text style={styles.textGithub}>Github </Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={openLinkedIn}>
-        <Text>LinkedIn</Text>
+      <TouchableOpacity style={styles.buttonLinkedIn} onPress={openLinkedIn}>
+        <Text style={styles.textLinkedIn}>LinkedIn</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
