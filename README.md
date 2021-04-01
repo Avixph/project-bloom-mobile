@@ -39,9 +39,12 @@
 | [![Remotive Job API logo](src/images/logos/remotive-job-api-logo.svg)](https://remotive.io/api-documentation) | The Remotive Job API allows you to retrieve jobs based on category, company name, and searches. |
 
 ## <div align="left" style='color: #240046'> 🏆 MVP 🏆</div>
+> - Job Detials screen becomes full screen so you don't lose your place when applying
 > - Search Bar
-> - Locations near me
 > - Light/Dark Mode
+> - Navigation tab disappears for more spacious viewing of job descriptions 
+
+
 
 ## <div align="left" style='color: #240046'> 🔮 Post-MVP 🔮 </div>
 > - Saving Jobs to Favorite Local Storage (heart or star)
