@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
     width: 160,
     height: 160,
   },
+  fixToText:{
+  flexDirection: "row",
+  justifyContent:"space-between",
+  },
   buttonGithub: {
     backgroundColor: "#7A559A",
     borderRadius: 20,
@@ -62,7 +66,7 @@ export default function AboutTeam(props) {
         {props.name.first} {props.name.last}
       </Text>
       <Text>{props.name.role}</Text>
-      <View>
+      <View styles={styles.fixToText}>
       <TouchableOpacity style={styles.buttonGithub} onPress={openGithub}>
         <MaterialCommunityIcons name="github" size={55} />
       </TouchableOpacity>
