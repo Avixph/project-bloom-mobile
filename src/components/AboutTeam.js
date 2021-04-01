@@ -19,48 +19,57 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fad085",
     // marginVertical: 20,
-    // padding: 10,
-    paddingTop: 20,
-    paddingBottom: 20,
+
+    paddingHorizontal: "5%",
+    paddingVertical: "8%",
+
     margin: 10,
     marginLeft: 25,
     marginRight: 25,
-    borderRadius: 17,
+    borderRadius: 20,
   },
   teamPic: {
-    paddingVertical: "50%",
+
     width: 190,
     height: 190,
-    borderRadius:20,
+    borderRadius: 20,
   },
-
-  fullname: {
+  fullName: {
     fontSize: 32,
-    fontWeight: bold,
+    fontWeight: "bold",
     marginBottom: "2%",
   },
-  Role: {
-    fontSize: 20,
+  role: {
+    fontSize: 18,
     marginBottom: "5%",
   },
-  fixToText:{
-  flexDirection: "row",
-  justifyContent:"space-between",
+  fixToText: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+
   },
   buttonGithub: {
     backgroundColor: "#7A559A",
     borderRadius: 20,
     width: "25%",
-    padding: "1%",
+
+    padding: "2%",
+    // marginVertical: "3%",
+    marginHorizontal: "4%",
+    alignItems: "center",
   },
   buttonLinkedIn: {
-    backgroundColor: "#7A559A",
+    backgroundColor: "#7a559a",
     borderRadius: 20,
     width: "25%",
-    padding: "1%",
+    padding: "2%",
+    // marginVertical: "3%",
+    marginHorizontal: "4%",
+    alignItems: "center",
   },
+  textGithub: {},
+  textLinkedIn: {},
 
-  
 });
 export default function AboutTeam(props) {
   const openGithub = () => {
@@ -72,17 +81,20 @@ export default function AboutTeam(props) {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.teamPic} source={{ uri: `${props.pic}` }} />
-      <Text style={fullname}>
+
+      <Text style={styles.fullName}>
         {props.name.first} {props.name.last}
       </Text>
-      <Text style={styles.Role} >{props.name.role}</Text>
-      <View styles={styles.fixToText}>
-      <TouchableOpacity style={styles.buttonGithub} onPress={openGithub}>
-        <MaterialCommunityIcons name="github" size={53} />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.buttonLinkedIn} onPress={openLinkedIn}>
-        <MaterialCommunityIcons name="linkedin" size={53} />
-      </TouchableOpacity>
+      <Text style={styles.role}>{props.name.role}</Text>
+
+      <View style={styles.fixToText}>
+        <TouchableOpacity style={styles.buttonGithub} onPress={openGithub}>
+          <MaterialCommunityIcons name="github" size={53} />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonLinkedIn} onPress={openLinkedIn}>
+          <MaterialCommunityIcons name="linkedin" size={53} />
+        </TouchableOpacity>
+
       </View>
     </SafeAreaView>
   );

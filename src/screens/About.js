@@ -20,8 +20,8 @@ const stylesLight = StyleSheet.create({
   },
   aboutHeader: {
     color: "#240046",
-    fontWeight: "300",
-    fontSize: 30,
+    fontWeight: "bold",
+    fontSize: 35,
     marginBottom: "5%",
   },
   aboutText: {
@@ -41,8 +41,8 @@ const stylesDark = StyleSheet.create({
   },
   aboutHeader: {
     color: "#e5e5e5",
-    fontWeight: "300",
-    fontSize: 30,
+    fontWeight: "bold",
+    fontSize: 35,
     marginBottom: "5%",
   },
   aboutText: {
