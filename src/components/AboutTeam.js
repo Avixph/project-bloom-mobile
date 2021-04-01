@@ -23,11 +23,28 @@ const styles = StyleSheet.create({
     borderRadius: 17,
     
   },
-  teamPic: { width: 120, height: 120 },
-  buttonLinkedIn: {},
-  buttonGithub: {},
-  textGithub:{},
-  textLinkedIn: {},
+  teamPic: { 
+    width: 120,
+    height: 120 
+  },
+
+  buttonLinkedIn: { 
+  backgroundColor: "#7a559a",
+  borderRadius: 20,
+  width: "40%",
+  margin: "1%",
+  marginHorizontal: "3%",
+  
+},
+  buttonGithub: {
+
+  },
+  textGithub:{
+
+  },
+  textLinkedIn: {
+
+  },
 });
 export default function AboutTeam(props) {
   const openGithub = () => {
