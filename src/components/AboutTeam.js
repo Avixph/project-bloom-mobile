@@ -14,9 +14,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
-    padding: 20,
+    padding: 10,
     margin: 10,
     borderRadius: 20,
+    
   },
   teamPic: { width: 120, height: 120 },
 });
