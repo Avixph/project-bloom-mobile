@@ -25,7 +25,8 @@ const stylesLight = StyleSheet.create({
     marginVertical: "5%",
   },
   aboutText: {
-    fontSize: 20,
+    fontSize: 22,
+    fontWeight: "600",
     color: "#240046",
     marginBottom: "5%",
     marginHorizontal: "5%",
@@ -46,7 +47,8 @@ const stylesDark = StyleSheet.create({
     marginVertical: "5%",
   },
   aboutText: {
-    fontSize: 20,
+    fontSize: 22,
+    fontWeight: "600",
     color: "#e5e5e5",
     marginBottom: "5%",
     marginHorizontal: "5%",

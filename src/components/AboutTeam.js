@@ -11,59 +11,6 @@ import {
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useLight } from "../contexts/HandleLightsOut";
 
-//call object props here?
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#fad085",
-    paddingHorizontal: "5%",
-    paddingVertical: "8%",
-    marginBottom: "8%",
-    marginHorizontal: "8%",
-    borderRadius: 20,
-  },
-  teamPic: {
-    width: 190,
-    height: 190,
-    borderRadius: 20,
-    borderColor: "#aa88c6",
-    borderWidth: 2,
-  },
-  fullName: {
-    color: "#240046",
-    fontSize: 30,
-    fontWeight: "bold",
-    marginBottom: "2%",
-    marginHorizontal: "1%",
-  },
-  role: {
-    color: "#7a559a",
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom: "5%",
-  },
-  fixToText: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  socialButton: {
-    backgroundColor: "#240046",
-    borderRadius: 20,
-    width: "35%",
-    padding: "2%",
-    marginHorizontal: "5%",
-    marginTop: "2%",
-    marginBottom: "-2%",
-    alignItems: "center",
-  },
-  socialIcon: {
-    fontSize: 53,
-    color: "#ffd085",
-  },
-});
-
 const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
@@ -92,7 +39,7 @@ const stylesLight = StyleSheet.create({
   },
   role: {
     color: "#7a559a",
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: "bold",
     marginBottom: "5%",
   },
@@ -143,10 +90,10 @@ const stylesDark = StyleSheet.create({
   },
   role: {
     color: "#7a559a",
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "bold",
     marginBottom: "5%",
-    textAlign:"center",
+    textAlign: "center",
   },
   fixToText: {
     flexDirection: "row",
