@@ -43,25 +43,16 @@ const stylesDark = StyleSheet.create({
     color: "#e5e5e5",
     fontWeight: "300",
     fontSize: 30,
-<<<<<<< HEAD
-    marginTop: "10%"
-
-    
-
-  },
-  aboutText: {
-    color: "#e5e5e5",
-    
-=======
     marginBottom: "5%",
   },
   aboutText: {
+    fontWeight: Bold,
+    fontSize: 35,
     color: "#e5e5e5",
     marginTop: "5%",
     marginBottom: "10%",
     marginHorizontal: "5%",
     textAlign: "center",
->>>>>>> dev
   },
 });
 export default function AboutScreen() {
