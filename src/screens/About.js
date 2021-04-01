@@ -33,10 +33,22 @@ const stylesDark = StyleSheet.create({
   },
   aboutHeader: {
     color: "#e5e5e5",
+    marginBottom: "5%",
+    fontWeight: "300",
+    fontSize: 30,
+    topMargin: "10%"
+
+    
+
   },
   aboutText: {
     color: "#e5e5e5",
+    fontWeight: "100",
+
+
   },
+
+
 });
 export default function AboutScreen() {
   const lightState = useLight();
