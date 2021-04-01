@@ -10,6 +10,7 @@ import {
 import { useLight } from "../contexts/HandleLightsOut";
 import AboutTeam from "../components/AboutTeam";
 import { teamBloom } from "../services/team.json";
+
 const stylesLight = StyleSheet.create({
   container: {
     flex: 1,
@@ -19,9 +20,16 @@ const stylesLight = StyleSheet.create({
   },
   aboutHeader: {
     color: "#240046",
+    fontWeight: "300",
+    fontSize: 30,
+    marginBottom: "5%",
   },
   aboutText: {
     color: "#240046",
+    marginTop: "5%",
+    marginBottom: "10%",
+    marginHorizontal: "5%",
+    textAlign: "center",
   },
 });
 const stylesDark = StyleSheet.create({
@@ -33,22 +41,17 @@ const stylesDark = StyleSheet.create({
   },
   aboutHeader: {
     color: "#e5e5e5",
-    marginBottom: "5%",
     fontWeight: "300",
     fontSize: 30,
-    topMargin: "10%"
-
-    
-
+    marginBottom: "5%",
   },
   aboutText: {
     color: "#e5e5e5",
-    fontWeight: "100",
-
-
+    marginTop: "5%",
+    marginBottom: "10%",
+    marginHorizontal: "5%",
+    textAlign: "center",
   },
-
-
 });
 export default function AboutScreen() {
   const lightState = useLight();
