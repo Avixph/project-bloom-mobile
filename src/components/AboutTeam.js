@@ -16,7 +16,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#d9bbf2",
     padding: 10,
     margin: 10,
-    borderRadius: 20,
+    marginLeft: 25,
+    marginRight: 25,
+    borderRadius: 17,
     
   },
   teamPic: { width: 120, height: 120 },
