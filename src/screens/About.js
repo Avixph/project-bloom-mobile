@@ -7,7 +7,7 @@ import {
   StatusBar,
   Text,
   View,
-  ScrollView
+  ScrollView,
 } from "react-native";
 
 import { useLight } from "../contexts/HandleLightsOut";
@@ -58,6 +58,7 @@ export default function AboutScreen() {
       style={lightState ? stylesDark.container : stylesLight.container}
     >
       <StatusBar barStyle={lightDarkStatusColor} />
+
       <Text style={lightState ? stylesDark.aboutHeader : stylesLight.aboutHeader}>About</Text>
       <ScrollView> 
       <Text style={lightState ? stylesDark.aboutText : stylesLight.aboutText}>
@@ -69,6 +70,7 @@ export default function AboutScreen() {
       
     <View> {renderTeam()}</View>
     </ ScrollView>
+
     </SafeAreaView>
   );
 }
