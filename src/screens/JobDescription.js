@@ -37,7 +37,6 @@ const stylesLight = StyleSheet.create({
     marginHorizontal: "30%",
     borderColor: "#aa88c6",
     borderWidth: 1,
-    marginHorizontal: "30%",
   },
   jobTitle: {
     color: "#240046",
