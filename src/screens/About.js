@@ -46,6 +46,8 @@ const stylesDark = StyleSheet.create({
     marginBottom: "5%",
   },
   aboutText: {
+    fontWeight: Bold,
+    fontSize: 35,
     color: "#e5e5e5",
     marginTop: "5%",
     marginBottom: "10%",

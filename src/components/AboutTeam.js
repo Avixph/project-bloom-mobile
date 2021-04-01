@@ -8,6 +8,7 @@ import {
   Image,
   View,
 } from "react-native";
+
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 //call object props here?
@@ -18,14 +19,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fad085",
     // marginVertical: 20,
+
     paddingHorizontal: "5%",
     paddingVertical: "8%",
+
     margin: 10,
     marginLeft: 25,
     marginRight: 25,
     borderRadius: 20,
   },
   teamPic: {
+
     width: 190,
     height: 190,
     borderRadius: 20,
@@ -42,11 +46,13 @@ const styles = StyleSheet.create({
   fixToText: {
     flexDirection: "row",
     justifyContent: "space-between",
+
   },
   buttonGithub: {
     backgroundColor: "#7A559A",
     borderRadius: 20,
     width: "25%",
+
     padding: "2%",
     // marginVertical: "3%",
     marginHorizontal: "4%",
@@ -63,6 +69,7 @@ const styles = StyleSheet.create({
   },
   textGithub: {},
   textLinkedIn: {},
+
 });
 export default function AboutTeam(props) {
   const openGithub = () => {
@@ -74,6 +81,7 @@ export default function AboutTeam(props) {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.teamPic} source={{ uri: `${props.pic}` }} />
+
       <Text style={styles.fullName}>
         {props.name.first} {props.name.last}
       </Text>
@@ -86,6 +94,7 @@ export default function AboutTeam(props) {
         <TouchableOpacity style={styles.buttonLinkedIn} onPress={openLinkedIn}>
           <MaterialCommunityIcons name="linkedin" size={53} />
         </TouchableOpacity>
+
       </View>
     </SafeAreaView>
   );
