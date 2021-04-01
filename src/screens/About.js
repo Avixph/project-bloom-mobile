@@ -36,7 +36,7 @@ const stylesDark = StyleSheet.create({
     marginBottom: "5%",
     fontWeight: "300",
     fontSize: 30,
-    topMargin: "10%"
+    marginTop: "10%"
 
     
 
