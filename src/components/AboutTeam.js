@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     
   },
   teamPic: { 
-    width: 120,
-    height: 120 
+    width: 165,
+    height: 165 
   },
 
   buttonLinkedIn: { 
@@ -34,10 +34,11 @@ const styles = StyleSheet.create({
   width: "40%",
   margin: "1%",
   marginHorizontal: "3%",
+
   
 },
   buttonGithub: {
-
+    borderRadius: 20
   },
   textGithub:{
 
