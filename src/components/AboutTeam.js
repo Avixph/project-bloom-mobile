@@ -6,7 +6,9 @@ import {
   SafeAreaView,
   Text,
   Image,
+  View,
 } from "react-native";
+
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 //call object props here?
@@ -17,7 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fad085",
     // marginVertical: 20,
-    padding: 10,
+    // padding: 10,
     paddingTop: 20,
     paddingBottom: 20,
     margin: 10,
@@ -26,19 +28,39 @@ const styles = StyleSheet.create({
     borderRadius: 17,
   },
   teamPic: {
-    width: 160,
-    height: 160,
+    paddingVertical: "50%",
+    width: 190,
+    height: 190,
+    borderRadius:20,
+  },
+
+  fullname: {
+    fontSize: 32,
+    fontWeight: bold,
+    marginBottom: "2%",
+  },
+  Role: {
+    fontSize: 20,
+    marginBottom: "5%",
+  },
+  fixToText:{
+  flexDirection: "row",
+  justifyContent:"space-between",
   },
   buttonGithub: {
     backgroundColor: "#7A559A",
     borderRadius: 20,
-    width: "40%",
-    margin: "5%",
-    marginHorizontal: "3%",
+    width: "25%",
+    padding: "1%",
   },
-  buttonLinkedIn: {},
-  textGithub: {},
-  textLinkedIn: {},
+  buttonLinkedIn: {
+    backgroundColor: "#7A559A",
+    borderRadius: 20,
+    width: "25%",
+    padding: "1%",
+  },
+
+  
 });
 export default function AboutTeam(props) {
   const openGithub = () => {
@@ -50,16 +72,18 @@ export default function AboutTeam(props) {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.teamPic} source={{ uri: `${props.pic}` }} />
-      <Text>
+      <Text style={fullname}>
         {props.name.first} {props.name.last}
       </Text>
-      <Text>{props.name.role}</Text>
+      <Text style={styles.Role} >{props.name.role}</Text>
+      <View styles={styles.fixToText}>
       <TouchableOpacity style={styles.buttonGithub} onPress={openGithub}>
-        <MaterialCommunityIcons name="github" size={55} />
+        <MaterialCommunityIcons name="github" size={53} />
       </TouchableOpacity>
       <TouchableOpacity style={styles.buttonLinkedIn} onPress={openLinkedIn}>
-        <MaterialCommunityIcons name="linkedin" size={55} />
+        <MaterialCommunityIcons name="linkedin" size={53} />
       </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
