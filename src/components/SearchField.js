@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Text,
   TextInput,
+  View,
 } from "react-native";
 import { fetchSearch } from "../redux/searchJobSlice";
 import { useLight } from "../contexts/HandleLightsOut";
@@ -16,14 +17,13 @@ const stylesLight = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#d9bbf2",
-    marginTop: "-15%",
-    marginBottom: "-10%",
+    marginVertical: "-50%",
   },
-  // separator: {
-  //   marginVertical: 8,
-  //   borderBottomColor: "#737373",
-  //   borderBottomWidth: StyleSheet.hairlineWidth,
-  // },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: "#737373",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
   text: {
     color: "#000000",
   },
@@ -36,10 +36,9 @@ const stylesLight = StyleSheet.create({
     borderRadius: 10,
     borderColor: "#ffd085",
     borderWidth: 2,
-    textAlign: 'center',
+    textAlign: "center",
     width: 328,
     fontSize: 20,
-
   },
 });
 
@@ -52,11 +51,11 @@ const stylesDark = StyleSheet.create({
     marginTop: "-15%",
     marginBottom: "-10%",
   },
-  // separator: {
-  //   marginVertical: 8,
-  //   borderBottomColor: "#737373",
-  //   borderBottomWidth: StyleSheet.hairlineWidth,
-  // },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: "#737373",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
   text: {
     color: "#e5e5e5",
   },
@@ -69,7 +68,7 @@ const stylesDark = StyleSheet.create({
     borderRadius: 10,
     borderColor: "#e5e5e5",
     borderWidth: 2,
-    textAlign: 'center',
+    textAlign: "center",
     width: 328,
     fontSize: 20,
   },
@@ -80,6 +79,10 @@ export default function SearchField() {
   const [search, setSearch] = useState("");
 
   const lightState = useLight();
+
+  const Separator = () => {
+    return <View style={lightState ? stylesDark.separator : stylesLight.separator} />;
+  };
 
   function handleSearch() {
     const field = search;
@@ -96,8 +99,9 @@ export default function SearchField() {
         placeholder="search for jobs"
         keyboardType="default"
         onChangeText={(val) => setSearch(val)}
-        onSubmitEditing={() => handleSearch() }
+        onSubmitEditing={() => handleSearch()}
       />
+      <Separator />
     </SafeAreaView>
   );
 }
