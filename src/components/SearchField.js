@@ -53,7 +53,8 @@ const stylesDark = StyleSheet.create({
   },
   separator: {
     marginVertical: 8,
-    borderBottomColor: "#737373",
+    marginTop: "8%",
+    borderBottomColor: "#e5e5e5",
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   text: {
@@ -80,10 +81,6 @@ export default function SearchField() {
 
   const lightState = useLight();
 
-  const Separator = () => {
-    return <View style={lightState ? stylesDark.separator : stylesLight.separator} />;
-  };
-
   function handleSearch() {
     const field = search;
     dispatch(fetchSearch(field));
@@ -93,7 +90,6 @@ export default function SearchField() {
     <SafeAreaView
       style={lightState ? stylesDark.container : stylesLight.container}
     >
-      {/* <Text style={lightState ? stylesDark.text : stylesLight.text}>Home</Text> */}
       <TextInput
         style={lightState ? stylesDark.input : stylesLight.input}
         placeholder="search for jobs"
@@ -101,7 +97,7 @@ export default function SearchField() {
         onChangeText={(val) => setSearch(val)}
         onSubmitEditing={() => handleSearch()}
       />
-      <Separator />
+      <View style={lightState ? stylesDark.separator : stylesLight.separator} />
     </SafeAreaView>
   );
 }
