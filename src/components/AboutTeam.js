@@ -7,44 +7,38 @@ import {
   Text,
   Image,
 } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 //call object props here?
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#d9bbf2",
+    backgroundColor: "#fad085",
+    // marginVertical: 20,
     padding: 10,
-    margin: 10,
     paddingTop: 20,
     paddingBottom: 20,
+    margin: 10,
     marginLeft: 25,
     marginRight: 25,
     borderRadius: 17,
-    
   },
-  teamPic: { 
-    width: 120,
-    height: 120 
+  teamPic: {
+    width: 160,
+    height: 160,
   },
-
-  buttonLinkedIn: { 
-  backgroundColor: "#7a559a",
-  borderRadius: 20,
-  width: "40%",
-  margin: "1%",
-  marginHorizontal: "3%",
-  
-},
   buttonGithub: {
-
+    backgroundColor: "#7A559A",
+    borderRadius: 20,
+    width: "40%",
+    margin: "5%",
+    marginHorizontal: "3%",
   },
-  textGithub:{
-
-  },
-  textLinkedIn: {
-
-  },
+  buttonLinkedIn: {},
+  textGithub: {},
+  textLinkedIn: {},
 });
 export default function AboutTeam(props) {
   const openGithub = () => {
@@ -61,10 +55,10 @@ export default function AboutTeam(props) {
       </Text>
       <Text>{props.name.role}</Text>
       <TouchableOpacity style={styles.buttonGithub} onPress={openGithub}>
-        <Text style={styles.textGithub}>Github </Text>
+        <MaterialCommunityIcons name="github" size={55} />
       </TouchableOpacity>
       <TouchableOpacity style={styles.buttonLinkedIn} onPress={openLinkedIn}>
-        <Text style={styles.textLinkedIn}>LinkedIn</Text>
+        <MaterialCommunityIcons name="linkedin" size={55} />
       </TouchableOpacity>
     </SafeAreaView>
   );
