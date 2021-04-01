@@ -19,15 +19,15 @@ const stylesLight = StyleSheet.create({
     backgroundColor: "#d9bbf2",
   },
   aboutHeader: {
-    color: "#240046",
+    color: "#121212",
     fontWeight: "bold",
-    fontSize: 35,
-    marginBottom: "5%",
+    fontSize: 37,
+    marginVertical: "5%",
   },
   aboutText: {
+    fontSize: 20,
     color: "#240046",
-    marginTop: "5%",
-    marginBottom: "10%",
+    marginBottom: "5%",
     marginHorizontal: "5%",
     textAlign: "center",
   },
@@ -40,17 +40,15 @@ const stylesDark = StyleSheet.create({
     backgroundColor: "#250246",
   },
   aboutHeader: {
-    color: "#e5e5e5",
+    color: "#d9bbf2",
     fontWeight: "bold",
-    fontSize: 35,
-    marginBottom: "5%",
+    fontSize: 37,
+    marginVertical: "5%",
   },
   aboutText: {
-    fontWeight: Bold,
-    fontSize: 35,
+    fontSize: 20,
     color: "#e5e5e5",
-    marginTop: "5%",
-    marginBottom: "10%",
+    marginBottom: "5%",
     marginHorizontal: "5%",
     textAlign: "center",
   },
@@ -71,7 +69,7 @@ export default function AboutScreen() {
       <Text
         style={lightState ? stylesDark.aboutHeader : stylesLight.aboutHeader}
       >
-        About
+        About Us
       </Text>
       <ScrollView>
         <Text style={lightState ? stylesDark.aboutText : stylesLight.aboutText}>
