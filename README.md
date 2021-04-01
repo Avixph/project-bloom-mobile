@@ -41,6 +41,7 @@
 ## <div align="left" style='color: #240046'> 🏆 MVP 🏆</div>
 > - Job Detials screen becomes full screen so you don't lose your place when applying
 > - Search Bar
+> - Random Selection of Jobs
 > - Light/Dark Mode
 > - Navigation tab disappears for more spacious viewing of job descriptions 
 
