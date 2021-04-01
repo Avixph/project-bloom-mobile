@@ -43,9 +43,7 @@ const stylesDark = StyleSheet.create({
   },
   aboutText: {
     color: "#e5e5e5",
-    fontWeight: "100",
-
-
+    
   },
 
 
