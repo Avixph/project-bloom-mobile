@@ -143,9 +143,10 @@ const stylesDark = StyleSheet.create({
   },
   role: {
     color: "#7a559a",
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "bold",
     marginBottom: "5%",
+    textAlign:"center",
   },
   fixToText: {
     flexDirection: "row",
